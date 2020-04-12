@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
 import java.net.URL;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -65,6 +66,7 @@ public class Album extends Entity {
         return featuredMusicians;
     }
 
+
     public void setFeaturedMusicians(Set<Musician> featuredMusicians) {
         this.featuredMusicians = featuredMusicians;
     }
@@ -96,9 +98,15 @@ public class Album extends Entity {
     public int getReleaseYear() {
         return releaseYear;
     }
-
+    //done
     public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
+//        if (releaseYear> Calendar.getInstance().get(Calendar.YEAR) ||releaseYear<1900){
+//            throw new IllegalArgumentException("Release Year is not a valid year");
+//        }
+//        else{
+//            this.releaseYear = releaseYear;
+//        }
     }
 
     public String getAlbumName() {
