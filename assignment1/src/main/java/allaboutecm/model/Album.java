@@ -120,6 +120,7 @@ public class Album extends Entity {
         return releaseYear == album.releaseYear &&
                 recordNumber.equals(album.recordNumber) &&
                 albumName.equals(album.albumName);
+        
     }
 
     @Override
