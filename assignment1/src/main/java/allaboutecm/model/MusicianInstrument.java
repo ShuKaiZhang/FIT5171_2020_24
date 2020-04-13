@@ -54,4 +54,6 @@ public class MusicianInstrument extends Entity {
     public int hashCode() {
         return Objects.hash(musician, musicalInstrument);
     }
+
+
 }

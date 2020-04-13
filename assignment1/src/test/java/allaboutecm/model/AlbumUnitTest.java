@@ -22,17 +22,26 @@ class AlbumUnitTest {
         album = new Album(1975, "ECM 1064/65", "The Köln Concert");
     }
 
+    /*
     @Test
     @DisplayName("Album name cannot be null")
     public void albumNameCannotBeNull() {
         assertThrows(NullPointerException.class, () -> album.setAlbumName(null));
     }
+     */
 
     @ParameterizedTest
     @ValueSource(strings = {"", " ", "    \t"})
     @DisplayName("Album name cannot be empty or blank")
     public void albumNameConnotBeEmptyOrBlank(String arg) {
         assertThrows(IllegalArgumentException.class, () -> album.setAlbumName(arg));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"", " ", "    \t"})
+    @DisplayName("Record number cannot be empty or blank")
+    public void recordNumberConnotBeEmptyOrBlank(String arg) {
+        assertThrows(IllegalArgumentException.class, () -> album.setRecordNumber(arg));
     }
 
     @ParameterizedTest
@@ -84,4 +93,22 @@ class AlbumUnitTest {
         assertEquals(album, album1);
     }
 
+    //boundary test ?
+    @Test
+    @DisplayName("Record number cannot be null")
+    public void recordNumberCannotBeNull() {
+        assertThrows(IllegalArgumentException.class, () -> new Album(1975, null,"The Köln Concert" ));
+    }
+
+    @Test
+    @DisplayName("Record number cannot be null")
+    public void albumNameCannotBeNull() {
+        assertThrows(IllegalArgumentException.class, () -> new Album(1975, "ECM 1064/65",null ));
+    }
+
+    @Test
+    @DisplayName("Album name and record number cannot be null")
+    public void albumNameAndRecordNumberCannotBeNull() {
+        assertThrows(IllegalArgumentException.class, () -> new Album(1975, null,null ));
+    }
 }
