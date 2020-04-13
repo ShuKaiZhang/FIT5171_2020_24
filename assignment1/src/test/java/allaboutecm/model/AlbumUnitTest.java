@@ -81,7 +81,7 @@ class AlbumUnitTest {
 
     @Test
     public void sameNameAndNumberMeansSameAlbum() {
-        Album album1 = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        Album album1 = new Album(1975, null, "The Köln Concert");
         assertEquals(album, album1);
     }
 
