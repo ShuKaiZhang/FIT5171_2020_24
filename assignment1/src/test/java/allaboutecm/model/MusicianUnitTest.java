@@ -23,7 +23,7 @@ class MusicianUnitTest {
 
     @Test
     @DisplayName("Musician name must be a name format")
-    public void albumNameCannotBeNull() {
+    public void musicianNameMustBeAName() {
         assertThrows(IllegalArgumentException.class, () -> new Musician("KeithJarrett"));
     }
 }

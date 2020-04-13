@@ -95,7 +95,7 @@ public class Album extends Entity {
         this.tracks = tracks;
     }
 
-    public int getReleaseYear() {
+        public int getReleaseYear() {
         return releaseYear;
     }
     //done
