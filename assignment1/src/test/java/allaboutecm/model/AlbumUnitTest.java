@@ -7,13 +7,15 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AlbumUnitTest {
-    private Album album;
+       private Album album;
 
     @BeforeEach
     public void setUp() {
@@ -64,9 +66,23 @@ class AlbumUnitTest {
     }
 
     @Test
+    @DisplayName("Featured musicians cannot be null")
+    public void FeaturedMusiciansCannotBeNull() {
+        Set<Musician> arg = new HashSet();
+        assertThrows(IllegalArgumentException.class, () -> album.setFeaturedMusicians(arg));
+    }
+
+    @Test
+    @DisplayName("Instruments cannot be null")
+    public void InstrumentsCannotBeNull() {
+        Set<MusicianInstrument> arg = new HashSet();
+        assertThrows(IllegalArgumentException.class, () -> album.setInstruments(arg));
+    }
+
+    @Test
     public void sameNameAndNumberMeansSameAlbum() {
         Album album1 = new Album(1975, "ECM 1064/65", "The Köln Concert");
-
         assertEquals(album, album1);
     }
+
 }

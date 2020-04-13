@@ -24,7 +24,6 @@ public class Musician extends Entity {
     public Musician(String name) {
         this.name = name;
         this.musicianUrl = null;
-
         albums = Sets.newLinkedHashSet();
     }
 

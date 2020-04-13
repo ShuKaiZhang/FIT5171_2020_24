@@ -1,41 +1,29 @@
 package allaboutecm.model;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MusicianUnitTest {
 
+    private Musician musician;
+
     @BeforeEach
-    void setUp() {
+    public void setUp() {
+        musician = new Musician("Keith Jarrett");
     }
 
     @Test
-    void getName() {
+    public void sameNameMeansSameMusician() {
+        Musician musician1 = new Musician("Keith Jarrett");
+        assertEquals(musician, musician1);
     }
 
     @Test
-    void getAlbums() {
-    }
-
-    @Test
-    void setAlbums() {
-    }
-
-    @Test
-    void testEquals() {
-    }
-
-    @Test
-    void testHashCode() {
-    }
-
-    @Test
-    void getMusicianUrl() {
-    }
-
-    @Test
-    void setMusicianUrl() {
+    @DisplayName("Musician name must be a name format")
+    public void albumNameCannotBeNull() {
+        assertThrows(IllegalArgumentException.class, () -> new Musician("KeithJarrett"));
     }
 }
