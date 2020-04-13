@@ -33,10 +33,11 @@ class AlbumUnitTest {
         assertThrows(IllegalArgumentException.class, () -> album.setAlbumName(arg));
     }
 
-    @Test
-    @DisplayName("Record Number should start with ECM")
-    public void recordNumberStartWithECM() {
-        assertThrows(IllegalArgumentException.class, () -> album.setRecordNumber("QWR 1231"));
+    @ParameterizedTest
+    @ValueSource(strings = {"QWE 1231", "ECM1231"})
+    @DisplayName("Record Number should start with 'ECM '")
+    public void recordNumberStartWithECM(String arg) {
+        assertThrows(IllegalArgumentException.class, () -> album.setRecordNumber(arg));
     }
 
     @ParameterizedTest
