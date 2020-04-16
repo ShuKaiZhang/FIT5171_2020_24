@@ -24,8 +24,21 @@ class MusicalInstrumentUnitTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"", " ", "    \t"})
-    @DisplayName("Musical instrument name cannot be null or blank")
-    public void albumNameCannotBeNull(String arg) {
+    @DisplayName("Musical instrument name cannot blank")
+    public void musicalInstrumentCannotBeBlank(String arg) {
         assertThrows(IllegalArgumentException.class, () -> musicalInstrument.setName(arg));
+    }
+
+    @Test
+    @DisplayName("Name cannot be null")
+    public void nameCannotBeNull() {
+        assertThrows(NullPointerException.class, () -> new MusicalInstrument(null ));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"", " ", "    \t"})
+    @DisplayName("Name cannot be blank")
+    public void nameCannotBeBlank(String arg) {
+        assertThrows(IllegalArgumentException.class, () -> new MusicalInstrument(arg ));
     }
 }

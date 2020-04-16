@@ -22,6 +22,9 @@ public class Musician extends Entity {
     private Set<Album> albums;
 
     public Musician(String name) {
+        if (!name.trim().contains(" ")){
+            throw new IllegalArgumentException("The albums cannot be blank!");
+        }else
         this.name = name;
         this.musicianUrl = null;
         albums = Sets.newLinkedHashSet();
@@ -36,7 +39,11 @@ public class Musician extends Entity {
     }
 
     public void setAlbums(Set<Album> albums) {
-        this.albums = albums;
+        notNull(albums);
+        if (albums.isEmpty()||albums.contains(null)){
+            throw new IllegalArgumentException("The albums cannot be blank!");
+        }else
+            this.albums = albums;
     }
 
     @Override

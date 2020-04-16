@@ -24,20 +24,31 @@ class MusicianInstrumentUnitTest {
     @Test
     @DisplayName("Musician cannot be null")
     public void musicianCannotBeNull() {
-        assertThrows(IllegalArgumentException.class, () -> new MusicianInstrument(new Musician(null), new MusicalInstrument("Piano")));
+        assertThrows(NullPointerException.class, () -> new MusicianInstrument(null, new MusicalInstrument("Piano")));
     }
 
     @Test
     @DisplayName("Musician instrument cannot be null")
     public void musicianInstrumentCannotBeNull() {
-        assertThrows(IllegalArgumentException.class, () -> new MusicianInstrument(new Musician("Keith Jarrett"), new MusicalInstrument(null)));
+        assertThrows(NullPointerException.class, () -> new MusicianInstrument(new Musician("Keith Jarrett"), null));
     }
 
     @Test
     @DisplayName("Musician and musician instrument cannot be null")
     public void musicianAndMusicianInstrumentCannotBeNull() {
-        assertThrows(IllegalArgumentException.class, () -> new MusicianInstrument(new Musician(null), new MusicalInstrument(null)));
+        assertThrows(NullPointerException.class, () -> new MusicianInstrument(null,null));
     }
 
+    @Test
+    @DisplayName("Musician cannot be null")
+    public void MusicianCannotBeNull() {
+        assertThrows(NullPointerException.class, () -> musicianInstrument.setMusician(null));
+    }
+
+    @Test
+    @DisplayName("Musical instrument cannot be null")
+    public void musicalInstrumentCannotBeNull() {
+        assertThrows(NullPointerException.class, () -> musicianInstrument.setMusicalInstrument(null));
+    }
 
 }

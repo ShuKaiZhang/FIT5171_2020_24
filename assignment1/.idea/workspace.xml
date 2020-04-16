@@ -40,7 +40,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AlbumUnitTest">
+  <component name="RunManager" selected="JUnit.MusicianUnitTest">
     <configuration name="AlbumUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="allaboutecm" />
       <extension name="coverage">
@@ -56,7 +56,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AlbumUnitTest.FeaturedMusiciansCannotBeNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MusicalInstrumentUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="allaboutecm" />
       <extension name="coverage">
         <pattern>
@@ -65,14 +65,44 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.model" />
-      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.AlbumUnitTest" />
-      <option name="METHOD_NAME" value="FeaturedMusiciansCannotBeNull" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.MusicalInstrumentUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MusicianInstrumentUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="allaboutecm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="allaboutecm.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="allaboutecm.model" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.MusicianInstrumentUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MusicianInstrumentUnitTest.nameCannotBeNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="allaboutecm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="allaboutecm.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="allaboutecm.model" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.MusicianInstrumentUnitTest" />
+      <option name="METHOD_NAME" value="nameCannotBeNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AlbumUnitTest.TracksCannotBeBlank" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MusicianUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="allaboutecm" />
       <extension name="coverage">
         <pattern>
@@ -81,52 +111,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.model" />
-      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.AlbumUnitTest" />
-      <option name="METHOD_NAME" value="TracksCannotBeBlank" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AlbumUnitTest.recordNumberStartWithECM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="allaboutecm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="allaboutecm.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="allaboutecm.model" />
-      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.AlbumUnitTest" />
-      <option name="METHOD_NAME" value="recordNumberStartWithECM(java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AlbumUnitTest.releaseYearMustBeFourDigitalNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="allaboutecm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="allaboutecm.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="allaboutecm.model" />
-      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.AlbumUnitTest" />
-      <option name="METHOD_NAME" value="releaseYearMustBeFourDigitalNumber(int)" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.MusicianUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MusicianUnitTest" />
+        <item itemvalue="JUnit.MusicianInstrumentUnitTest" />
+        <item itemvalue="JUnit.MusicianInstrumentUnitTest.nameCannotBeNull" />
+        <item itemvalue="JUnit.MusicalInstrumentUnitTest" />
         <item itemvalue="JUnit.AlbumUnitTest" />
-        <item itemvalue="JUnit.AlbumUnitTest.TracksCannotBeBlank" />
-        <item itemvalue="JUnit.AlbumUnitTest.FeaturedMusiciansCannotBeNull" />
-        <item itemvalue="JUnit.AlbumUnitTest.releaseYearMustBeFourDigitalNumber" />
-        <item itemvalue="JUnit.AlbumUnitTest.recordNumberStartWithECM" />
       </list>
     </recent_temporary>
   </component>
@@ -148,22 +145,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1586751162264" />
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1587016548809">
+    <state width="1493" height="234" key="GridCell.Tab.0.bottom" timestamp="1587018564545">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587016548809" />
-    <state width="1493" height="211" key="GridCell.Tab.0.center" timestamp="1587016548809">
+    <state width="1493" height="234" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587018564545" />
+    <state width="1493" height="234" key="GridCell.Tab.0.center" timestamp="1587018564545">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587016548809" />
-    <state width="1493" height="211" key="GridCell.Tab.0.left" timestamp="1587016548809">
+    <state width="1493" height="234" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587018564545" />
+    <state width="1493" height="234" key="GridCell.Tab.0.left" timestamp="1587018564545">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587016548809" />
-    <state width="1493" height="211" key="GridCell.Tab.0.right" timestamp="1587016548809">
+    <state width="1493" height="234" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587018564545" />
+    <state width="1493" height="234" key="GridCell.Tab.0.right" timestamp="1587018564545">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587016548809" />
+    <state width="1493" height="234" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587018564545" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1587015750621">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -192,5 +189,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="540" y="130" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1586753779811" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1587016975948">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587016975948" />
   </component>
 </project>
