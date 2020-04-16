@@ -1,36 +1,61 @@
 -------------------------------------------------------------------------------
 Test set: allaboutecm.model.AlbumUnitTest
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.132 s <<< FAILURE! - in allaboutecm.model.AlbumUnitTest
-allaboutecm.model.AlbumUnitTest.FeaturedMusiciansCannotBeNull  Time elapsed: 0.033 s  <<< FAILURE!
+Tests run: 20, Failures: 12, Errors: 0, Skipped: 0, Time elapsed: 0.198 s <<< FAILURE! - in allaboutecm.model.AlbumUnitTest
+allaboutecm.model.AlbumUnitTest.FeaturedMusiciansCannotBeNull  Time elapsed: 0.039 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
-	at allaboutecm.model.AlbumUnitTest.FeaturedMusiciansCannotBeNull(AlbumUnitTest.java:72)
+	at allaboutecm.model.AlbumUnitTest.FeaturedMusiciansCannotBeNull(AlbumUnitTest.java:85)
 
-allaboutecm.model.AlbumUnitTest.TracksCannotBeNull  Time elapsed: 0.002 s  <<< FAILURE!
+allaboutecm.model.AlbumUnitTest.recordNumberCannotBeNull  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NullPointerException>
+	at allaboutecm.model.AlbumUnitTest.recordNumberCannotBeNull(AlbumUnitTest.java:105)
+Caused by: java.lang.NullPointerException: The validated object is null
+	at allaboutecm.model.AlbumUnitTest.lambda$recordNumberCannotBeNull$10(AlbumUnitTest.java:105)
+	at allaboutecm.model.AlbumUnitTest.recordNumberCannotBeNull(AlbumUnitTest.java:105)
+
+allaboutecm.model.AlbumUnitTest.albumNameAndRecordNumberCannotBeNull  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NullPointerException>
+	at allaboutecm.model.AlbumUnitTest.albumNameAndRecordNumberCannotBeNull(AlbumUnitTest.java:117)
+Caused by: java.lang.NullPointerException: The validated object is null
+	at allaboutecm.model.AlbumUnitTest.lambda$albumNameAndRecordNumberCannotBeNull$12(AlbumUnitTest.java:117)
+	at allaboutecm.model.AlbumUnitTest.albumNameAndRecordNumberCannotBeNull(AlbumUnitTest.java:117)
+
+allaboutecm.model.AlbumUnitTest.TracksCannotBeNull  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
-	at allaboutecm.model.AlbumUnitTest.TracksCannotBeNull(AlbumUnitTest.java:65)
+	at allaboutecm.model.AlbumUnitTest.TracksCannotBeNull(AlbumUnitTest.java:78)
 
 allaboutecm.model.AlbumUnitTest.TracksCannotBeBlank  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
-	at allaboutecm.model.AlbumUnitTest.TracksCannotBeBlank(AlbumUnitTest.java:58)
+	at allaboutecm.model.AlbumUnitTest.TracksCannotBeBlank(AlbumUnitTest.java:72)
 
-allaboutecm.model.AlbumUnitTest.releaseYearMustBeFourDigitalNumber(int)[1]  Time elapsed: 0.021 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
-	at allaboutecm.model.AlbumUnitTest.releaseYearMustBeFourDigitalNumber(AlbumUnitTest.java:49)
+allaboutecm.model.AlbumUnitTest.nameCannotBeNull  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <java.lang.NullPointerException>
+	at allaboutecm.model.AlbumUnitTest.nameCannotBeNull(AlbumUnitTest.java:111)
+Caused by: java.lang.NullPointerException: The validated object is null
+	at allaboutecm.model.AlbumUnitTest.lambda$nameCannotBeNull$11(AlbumUnitTest.java:111)
+	at allaboutecm.model.AlbumUnitTest.nameCannotBeNull(AlbumUnitTest.java:111)
 
-allaboutecm.model.AlbumUnitTest.releaseYearMustBeFourDigitalNumber(int)[2]  Time elapsed: 0.003 s  <<< FAILURE!
+allaboutecm.model.AlbumUnitTest.releaseYearMustBeFourDigitalNumber(int)[1]  Time elapsed: 0.002 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
-	at allaboutecm.model.AlbumUnitTest.releaseYearMustBeFourDigitalNumber(AlbumUnitTest.java:49)
+	at allaboutecm.model.AlbumUnitTest.releaseYearMustBeFourDigitalNumber(AlbumUnitTest.java:63)
 
-allaboutecm.model.AlbumUnitTest.InstrumentsCannotBeNull  Time elapsed: 0.002 s  <<< FAILURE!
+allaboutecm.model.AlbumUnitTest.releaseYearMustBeFourDigitalNumber(int)[2]  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
-	at allaboutecm.model.AlbumUnitTest.InstrumentsCannotBeNull(AlbumUnitTest.java:79)
+	at allaboutecm.model.AlbumUnitTest.releaseYearMustBeFourDigitalNumber(AlbumUnitTest.java:63)
+
+allaboutecm.model.AlbumUnitTest.InstrumentsCannotBeNull  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at allaboutecm.model.AlbumUnitTest.InstrumentsCannotBeNull(AlbumUnitTest.java:92)
+
+allaboutecm.model.AlbumUnitTest.albumURLCannotBeNull  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.NullPointerException to be thrown, but nothing was thrown.
+	at allaboutecm.model.AlbumUnitTest.albumURLCannotBeNull(AlbumUnitTest.java:35)
 
 allaboutecm.model.AlbumUnitTest.recordNumberStartWithECM(String)[1]  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
-	at allaboutecm.model.AlbumUnitTest.recordNumberStartWithECM(AlbumUnitTest.java:42)
+	at allaboutecm.model.AlbumUnitTest.recordNumberStartWithECM(AlbumUnitTest.java:56)
 
-allaboutecm.model.AlbumUnitTest.recordNumberStartWithECM(String)[2]  Time elapsed: 0 s  <<< FAILURE!
+allaboutecm.model.AlbumUnitTest.recordNumberStartWithECM(String)[2]  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
-	at allaboutecm.model.AlbumUnitTest.recordNumberStartWithECM(AlbumUnitTest.java:42)
+	at allaboutecm.model.AlbumUnitTest.recordNumberStartWithECM(AlbumUnitTest.java:56)
 

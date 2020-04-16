@@ -58,8 +58,11 @@ public class Album extends Entity {
     public void setRecordNumber(String recordNumber) {
         notNull(recordNumber);
         notBlank(recordNumber);
+        if (recordNumber.substring(3).equals("ECM ")){
+            this.recordNumber = recordNumber;
 
-        this.recordNumber = recordNumber;
+        }else
+            throw new IllegalArgumentException("The record number must start with 'ECM '!");
     }
 
     public Set<Musician> getFeaturedMusicians() {
@@ -68,7 +71,10 @@ public class Album extends Entity {
 
 
     public void setFeaturedMusicians(Set<Musician> featuredMusicians) {
-        this.featuredMusicians = featuredMusicians;
+        if (featuredMusicians.isEmpty()){
+            throw new IllegalArgumentException("The featured musicians cannot be blank!");
+        }else
+            this.featuredMusicians = featuredMusicians;
     }
 
     public Set<MusicianInstrument> getInstruments() {
@@ -76,6 +82,10 @@ public class Album extends Entity {
     }
 
     public void setInstruments(Set<MusicianInstrument> instruments) {
+        notNull(instruments);
+        if (instruments.isEmpty()){
+            throw new IllegalArgumentException("The instruments cannot be blank!");
+        }else
         this.instruments = instruments;
     }
 
@@ -84,6 +94,7 @@ public class Album extends Entity {
     }
 
     public void setAlbumURL(URL albumURL) {
+        notNull(albumURL);
         this.albumURL = albumURL;
     }
 
@@ -92,6 +103,10 @@ public class Album extends Entity {
     }
 
     public void setTracks(List<String> tracks) {
+        notNull(recordNumber);
+        if (tracks.isEmpty()||tracks.contains("")||tracks.contains(null)){
+            throw new IllegalArgumentException("The tracks cannot be blank!");
+        }else
         this.tracks = tracks;
     }
 
@@ -101,12 +116,12 @@ public class Album extends Entity {
     //done
     public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
-//        if (releaseYear> Calendar.getInstance().get(Calendar.YEAR) ||releaseYear<1900){
-//            throw new IllegalArgumentException("Release Year is not a valid year");
-//        }
-//        else{
-//            this.releaseYear = releaseYear;
-//        }
+        if (releaseYear> Calendar.getInstance().get(Calendar.YEAR) ||releaseYear<1900){
+            throw new IllegalArgumentException("Release Year is not a valid year");
+        }
+        else{
+            this.releaseYear = releaseYear;
+        }
     }
 
     public String getAlbumName() {
