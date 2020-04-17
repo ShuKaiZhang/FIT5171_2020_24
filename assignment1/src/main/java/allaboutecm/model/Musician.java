@@ -21,6 +21,11 @@ public class Musician extends Entity {
 
     private Set<Album> albums;
 
+    private URL musicianWiki;
+
+    private  String biography;
+
+
     public Musician(String name) {
         if (!name.trim().contains(" ")){
             throw new IllegalArgumentException("The albums cannot be blank!");
@@ -28,6 +33,24 @@ public class Musician extends Entity {
         this.name = name;
         this.musicianUrl = null;
         albums = Sets.newLinkedHashSet();
+        this.musicianWiki = null;
+        this.biography = null;
+    }
+
+    public URL getMusicianWiki() {
+        return musicianWiki;
+    }
+
+    public void setMusicianWiki(URL musicianWiki) {
+        this.musicianWiki = musicianWiki;
+    }
+
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
     }
 
     public String getName() {

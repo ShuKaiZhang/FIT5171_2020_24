@@ -4,10 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
 import java.net.URL;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 import static org.apache.commons.lang3.Validate.notBlank;
 import static org.apache.commons.lang3.Validate.notNull;
@@ -31,7 +28,11 @@ public class Album extends Entity {
 
     private URL albumURL;
 
-    private List<String> tracks;
+    private HashMap<String, Double> tracks;
+
+    private String style;
+
+    private String releaseFormat;
 
     public Album(int releaseYear, String recordNumber, String albumName) {
         notNull(recordNumber);
@@ -44,11 +45,13 @@ public class Album extends Entity {
         this.recordNumber = recordNumber;
         this.albumName = albumName;
 
+        this.releaseFormat = null;
+        this.style = null;
         this.albumURL = null;
 
         featuredMusicians = Sets.newHashSet();
         instruments = Sets.newHashSet();
-        tracks = Lists.newArrayList();
+        tracks = new HashMap<>();
     }
 
     public String getRecordNumber() {
@@ -98,16 +101,22 @@ public class Album extends Entity {
         this.albumURL = albumURL;
     }
 
-    public List<String> getTracks() {
+    public HashMap<String, Double> getTracks() {
         return tracks;
     }
 
-    public void setTracks(List<String> tracks) {
-        notNull(recordNumber);
-        if (tracks.isEmpty()||tracks.contains("")||tracks.contains(null)){
+    public void setTracks(HashMap<String, Double> tracks) {
+        notNull(tracks);
+        if (tracks.isEmpty()||tracks.containsKey("")){
             throw new IllegalArgumentException("The tracks cannot be blank!");
-        }else
-        this.tracks = tracks;
+        }
+        else{
+        this.tracks = tracks;}
+        tracks.forEach((key, value) -> {
+            if (value <= 0.0) {
+                throw new IllegalArgumentException("The tracks length cannot less than 0!");
+            }
+        });
     }
 
         public int getReleaseYear() {
@@ -148,5 +157,21 @@ public class Album extends Entity {
     @Override
     public int hashCode() {
         return Objects.hash(releaseYear, recordNumber, albumName);
+    }
+
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
+    }
+
+    public String getReleaseFormat() {
+        return releaseFormat;
+    }
+
+    public void setReleaseFormat(String releaseFormat) {
+        this.releaseFormat = releaseFormat;
     }
 }

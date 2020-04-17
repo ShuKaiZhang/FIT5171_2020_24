@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -66,10 +63,19 @@ class AlbumUnitTest {
     @Test
     @DisplayName("Tracks cannot be blank")
     public void TracksCannotBeBlank() {
-        List<String> arg = new ArrayList<>();
-        arg.add("");
+        HashMap<String, Double> arg = new HashMap<>();
+        arg.put("",3.2);
         assertThrows(IllegalArgumentException.class, () -> album.setTracks(arg));
     }
+
+    @Test
+    @DisplayName("Tracks length cannot less than 0")
+    public void TracksLengthCannotLessThan0() {
+        HashMap<String, Double> arg = new HashMap<>();
+        arg.put("Hahaha",0.0);
+        assertThrows(IllegalArgumentException.class, () -> album.setTracks(arg));
+    }
+
     @Test
     @DisplayName("Tracks cannot be null")
     public void TracksCannotBeNull() {
@@ -89,6 +95,8 @@ class AlbumUnitTest {
         Set<MusicianInstrument> arg = new HashSet();
         assertThrows(IllegalArgumentException.class, () -> album.setInstruments(arg));
     }
+
+
 
     @Test
     public void sameNameAndNumberMeansSameAlbum() {
