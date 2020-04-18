@@ -54,7 +54,7 @@ class AlbumUnitTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {2022, 1})
+    @ValueSource(ints = {2021, 2300, 1899, 1})
     @DisplayName("Release year must be four digital number")
     public void releaseYearMustBeFourDigitalNumber(int arg) {
         assertThrows(IllegalArgumentException.class, () -> album.setReleaseYear(arg));
