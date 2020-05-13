@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 17.281 s <<< FAILURE! - in allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest
+allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationOfMusicianAndAlbum  Time elapsed: 2.47 s  <<< ERROR!
+org.neo4j.ogm.exception.CypherException: Cypher execution failed with code 'Neo.ClientError.Statement.TypeError': Property values can only be of primitive types or arrays thereof.
+	at allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationOfMusicianAndAlbum(Neo4jDAOUnitTest.java:106)
+Caused by: org.neo4j.graphdb.QueryExecutionException: Property values can only be of primitive types or arrays thereof
+	at allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationOfMusicianAndAlbum(Neo4jDAOUnitTest.java:106)
+Caused by: org.neo4j.kernel.impl.query.QueryExecutionKernelException: Property values can only be of primitive types or arrays thereof
+	at allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationOfMusicianAndAlbum(Neo4jDAOUnitTest.java:106)
+Caused by: org.neo4j.cypher.CypherTypeException: Property values can only be of primitive types or arrays thereof
+	at allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationOfMusicianAndAlbum(Neo4jDAOUnitTest.java:106)
+Caused by: org.neo4j.cypher.internal.v3_5.util.CypherTypeException: Property values can only be of primitive types or arrays thereof
+	at allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationOfMusicianAndAlbum(Neo4jDAOUnitTest.java:106)
+

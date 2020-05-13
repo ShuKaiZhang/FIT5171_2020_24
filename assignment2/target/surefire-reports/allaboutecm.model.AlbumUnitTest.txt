@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: allaboutecm.model.AlbumUnitTest
+-------------------------------------------------------------------------------
+Tests run: 24, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.067 s <<< FAILURE! - in allaboutecm.model.AlbumUnitTest
+allaboutecm.model.AlbumUnitTest.TracksCannotBeNull  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.NullPointerException to be thrown, but nothing was thrown.
+	at allaboutecm.model.AlbumUnitTest.TracksCannotBeNull(AlbumUnitTest.java:90)
+
+allaboutecm.model.AlbumUnitTest.TracksCannotBeBlank  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at allaboutecm.model.AlbumUnitTest.TracksCannotBeBlank(AlbumUnitTest.java:76)
+
+allaboutecm.model.AlbumUnitTest.TracksLengthCannotLessThan0  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at allaboutecm.model.AlbumUnitTest.TracksLengthCannotLessThan0(AlbumUnitTest.java:84)
+
