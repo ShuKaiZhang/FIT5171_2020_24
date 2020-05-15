@@ -55,7 +55,19 @@ public class Neo4jDAO implements DAO {
 
     @Override
     public <T extends Entity> void delete(T entity) {
-        session.delete(entity);
+        Class clazz = entity.getClass();
+        T exist = findExistingEntity(entity,clazz);
+        if(exist == null) {
+            throw new IllegalArgumentException("The entity does not exist");
+        }
+        else if(clazz.equals(Musician.class)) {
+            Musician musician = (Musician)entity;
+            Collection<MusicianInstrument> musicianInstruments = this.loadAll(MusicianInstrument.class);
+            for(MusicianInstrument musicianInstrument:musicianInstruments){
+                session.delete(musicianInstrument);
+            }
+            session.delete(entity);
+        }
     }
 
     @Override

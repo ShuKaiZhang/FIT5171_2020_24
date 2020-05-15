@@ -18,9 +18,10 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
+import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * TODO: add test cases to adequately test the Neo4jDAO class.
@@ -112,5 +113,42 @@ class Neo4jDAOUnitTest {
         assertEquals(musician, loadedMusician);
         assertEquals(musician.getMusicianUrl(), loadedMusician.getMusicianUrl());
         assertEquals(musician.getAlbums(), loadedMusician.getAlbums());
+    }
+
+    @Test
+    public void cannotSaveSameMusicianTwice() throws MalformedURLException {
+        Musician musician1 = new Musician("Keith Jarrett");
+        musician1.setMusicianUrl(new URL("https://www.keithjarrett.org/"));
+        dao.createOrUpdate(musician1);
+
+        Musician musician2 = new Musician("Keith Jarrett");
+        musician2.setMusicianUrl(new URL("https://www.keithjarrett.org/"));
+        dao.createOrUpdate(musician2);
+
+        Collection<Musician> musicians = dao.loadAll(Musician.class);
+        assertEquals(1, musicians.size());
+        assertEquals(musician1.getName(), musicians.iterator().next().getName());
+    }
+
+    @Test
+    public void saveMultiMusicians() throws MalformedURLException {
+        Set<Musician> musicianSet = Sets.newHashSet(
+                new Musician("Shukai Zhang"),
+                new Musician("Qiuli Wang"),
+                new Musician("Yike Xu")
+        );
+
+        for(Musician musician: musicianSet) {
+            dao.createOrUpdate(musician);
+        }
+
+        Collection<Musician> musicians = dao.loadAll(Musician.class);
+        assertEquals(musicianSet.size(),musicians.size(), "loaded number is not right");
+        for (Musician musician: musicianSet) {
+            assertTrue(musicians.contains(musician), "Not contains :"+ musician.getName());
+        }
+        for (Musician musician: musicians) {
+            assertTrue(musicianSet.contains(musician), "Not contains :"+ musician.getName());
+        }
     }
 }
