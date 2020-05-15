@@ -2,7 +2,9 @@ package allaboutecm.dataaccess.neo4j;
 
 import allaboutecm.dataaccess.DAO;
 import allaboutecm.model.Album;
+import allaboutecm.model.MusicalInstrument;
 import allaboutecm.model.Musician;
+import allaboutecm.model.MusicianInstrument;
 import com.google.common.collect.Sets;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -18,6 +20,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -131,7 +134,7 @@ class Neo4jDAOUnitTest {
     }
 
     @Test
-    public void saveMultiMusicians() throws MalformedURLException {
+    public void saveMultiMusicians() {
         Set<Musician> musicianSet = Sets.newHashSet(
                 new Musician("Shukai Zhang"),
                 new Musician("Qiuli Wang"),
@@ -151,4 +154,71 @@ class Neo4jDAOUnitTest {
             assertTrue(musicianSet.contains(musician), "Not contains :"+ musician.getName());
         }
     }
+
+    @Test
+    public void musicianInfoCanBeUpdated() {
+        Musician musician = new Musician("Keith Jarrett");
+        musician.setBiography("He is a singer!");
+        dao.createOrUpdate(musician);
+
+        musician.setBiography("He is an actor!");
+        dao.createOrUpdate(musician);
+
+        Musician mBiography = dao.load(Musician.class, musician.getId());
+        assertNotEquals("He is a singer!", mBiography.getBiography());
+    }
+
+    @Test
+    public void deleteMusician() throws MalformedURLException {
+        Musician musician = new Musician("Keith Jarrett");
+        musician.setMusicianUrl(new URL("https://www.keithjarrett.org/"));
+
+        dao.createOrUpdate(musician);
+        dao.delete(musician);
+
+        Collection<Musician> musicians = dao.loadAll(Musician.class);
+        assertEquals(0, musicians.size(),"Delete failed");
+    }
+
+
+    @Test
+    public void deleteMusicianCauseDeleteMusicianInstrument() throws MalformedURLException {
+        Musician musician = new Musician("Keith Jarrett");
+        musician.setMusicianUrl(new URL("https://www.keithjarrett.org/"));
+        dao.createOrUpdate(musician);
+
+        MusicalInstrument musicalInstrument = new MusicalInstrument("piano");
+        Set<MusicalInstrument> set = new HashSet<>();
+        set.add(musicalInstrument);
+
+        MusicianInstrument musicianInstrument = new MusicianInstrument(musician,set);
+        dao.createOrUpdate(musicianInstrument);
+//        Musician musician1 = new Musician("K s");
+//        musician1.setMusicianUrl(new URL("https://www.keithjarrettt.org/"));
+//        dao.createOrUpdate(musician1);
+//
+//        MusicalInstrument musicalInstrument1 = new MusicalInstrument("pianoo");
+//        Set<MusicalInstrument> set1 = new HashSet<>();
+//        set1.add(musicalInstrument1);
+//
+//        MusicianInstrument musicianInstrument1 = new MusicianInstrument(musician1,set1);
+//        dao.createOrUpdate(musicianInstrument1);
+
+        dao.delete(musician);
+
+        Collection<MusicianInstrument> musicianInstruments = dao.loadAll(MusicianInstrument.class);
+        assertEquals(1, musicianInstruments.size(),"Delete failed");
+    }
+
+    @Test
+    public void findMusicianByName() {
+        Musician musician = new Musician("Keith Jarrett");
+
+        dao.createOrUpdate(musician);
+
+        Musician foundMusician = dao.findMusicianByName(musician.getName());
+
+        assertEquals(musician, foundMusician, "Nothing found");
+    }
+
 }

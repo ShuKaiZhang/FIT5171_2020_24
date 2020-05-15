@@ -13,7 +13,10 @@ import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.transaction.Transaction;
 
 import java.util.Collection;
+import java.util.List;
 
+import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
+import static org.neo4j.ogm.cypher.ComparisonOperator.CONTAINING;
 import static org.neo4j.ogm.cypher.ComparisonOperator.EQUALS;
 
 public class Neo4jDAO implements DAO {
@@ -60,11 +63,27 @@ public class Neo4jDAO implements DAO {
         if(exist == null) {
             throw new IllegalArgumentException("The entity does not exist");
         }
-        else if(clazz.equals(Musician.class)) {
+        else if(clazz.equals(Musician.class) ) {
             Musician musician = (Musician)entity;
-            Collection<MusicianInstrument> musicianInstruments = this.loadAll(MusicianInstrument.class);
-            for(MusicianInstrument musicianInstrument:musicianInstruments){
-                session.delete(musicianInstrument);
+//            Filters filters1 = new Filters();
+//            filters1.add(new Filter("musician", EQUALS, musician));
+//            Collection<MusicianInstrument> musicianInstruments = this.loadAll(MusicianInstrument.class);
+//            System.out.println(musicianInstruments);
+//            if (!musicianInstruments.isEmpty()) {
+//                for (MusicianInstrument musicianInstrument : musicianInstruments) {
+//                    session.delete(musicianInstrument);
+//                }
+//            }
+
+            Filters filters2 = new Filters();
+            filters2.add(new Filter("featuredMusicians", CONTAINING, musician));
+            Collection<Album> albums = session.loadAll(Album.class, filters2);
+            for(Album album:albums){
+                List<Musician> list = album.getFeaturedMusicians();
+                if (!albums.isEmpty()) {
+                    list.remove(musician);
+                    album.setFeaturedMusicians(list);
+                }
             }
             session.delete(entity);
         }

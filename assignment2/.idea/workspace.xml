@@ -31,38 +31,8 @@
       <recent name="C:\Users\Harry\Desktop\FIT5171\assignment2\assignment2\src\test\java\allaboutecm\model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Neo4jDAOUnitTest.saveMultiMusicians">
-    <configuration name="MusicalInstrumentUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fit5171-2020-XX" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="allaboutecm.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="allaboutecm.model" />
-      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.MusicalInstrumentUnitTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MusicianUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fit5171-2020-XX" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="allaboutecm.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="allaboutecm.model" />
-      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.MusicianUnitTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Neo4jDAOUnitTest.cannotSaveSameMusicianTwice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.Neo4jDAOUnitTest.deleteMusicianCauseDeleteMusicianInstrument">
+    <configuration name="Neo4jDAOUnitTest.deleteAlbum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
@@ -72,13 +42,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.dataaccess.neo4j" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest" />
-      <option name="METHOD_NAME" value="cannotSaveSameMusicianTwice" />
+      <option name="METHOD_NAME" value="deleteAlbum" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Neo4jDAOUnitTest.daoIsNotEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Neo4jDAOUnitTest.deleteMusician" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
@@ -88,7 +58,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.dataaccess.neo4j" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest" />
-      <option name="METHOD_NAME" value="daoIsNotEmpty" />
+      <option name="METHOD_NAME" value="deleteMusician" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Neo4jDAOUnitTest.deleteMusicianCauseDeleteMusicianInstrument" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fit5171-2020-XX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="allaboutecm.dataaccess.neo4j.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="allaboutecm.dataaccess.neo4j" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest" />
+      <option name="METHOD_NAME" value="deleteMusicianCauseDeleteMusicianInstrument" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Neo4jDAOUnitTest.musicianInfoCanBeUpdated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fit5171-2020-XX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="allaboutecm.dataaccess.neo4j.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="allaboutecm.dataaccess.neo4j" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest" />
+      <option name="METHOD_NAME" value="musicianInfoCanBeUpdated" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,11 +114,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Neo4jDAOUnitTest.deleteMusicianCauseDeleteMusicianInstrument" />
+        <item itemvalue="JUnit.Neo4jDAOUnitTest.deleteMusician" />
+        <item itemvalue="JUnit.Neo4jDAOUnitTest.deleteAlbum" />
+        <item itemvalue="JUnit.Neo4jDAOUnitTest.musicianInfoCanBeUpdated" />
         <item itemvalue="JUnit.Neo4jDAOUnitTest.saveMultiMusicians" />
-        <item itemvalue="JUnit.Neo4jDAOUnitTest.cannotSaveSameMusicianTwice" />
-        <item itemvalue="JUnit.Neo4jDAOUnitTest.daoIsNotEmpty" />
-        <item itemvalue="JUnit.MusicianUnitTest" />
-        <item itemvalue="JUnit.MusicalInstrumentUnitTest" />
       </list>
     </recent_temporary>
   </component>
@@ -132,32 +134,65 @@
       <updated>1589372085291</updated>
       <workItem from="1589372086679" duration="5847000" />
       <workItem from="1589515723256" duration="3300000" />
+      <workItem from="1589536077564" duration="10918000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="606" height="210" key="GridCell.Tab.0.bottom" timestamp="1589519024379">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="1054" y="100" width="773" height="847" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589543265004">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1054" y="100" width="773" height="847" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589543265004" />
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1589546707331">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="606" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589519024379" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589377938226" />
-    <state width="606" height="210" key="GridCell.Tab.0.center" timestamp="1589519024379">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589546707331" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1589546707331">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="606" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589519024379" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589377938226" />
-    <state width="606" height="210" key="GridCell.Tab.0.left" timestamp="1589519024379">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589546707331" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1589546707331">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="606" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589519024379" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589377938226" />
-    <state width="606" height="210" key="GridCell.Tab.0.right" timestamp="1589519024379">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589546707331" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1589546707331">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="606" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589519024379" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589377938226" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589546707331" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1589543172834">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589543172834" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1589543172834">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589543172834" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1589543172834">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589543172834" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1589543172834">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589543172834" />
+    <state x="511" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1589543094585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="511" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1589543094585" />
+    <state x="1170" y="288" key="extract.method.dialog" timestamp="1589539873507">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1170" y="288" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589539873507" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1589546812306">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589546812306" />
   </component>
 </project>
