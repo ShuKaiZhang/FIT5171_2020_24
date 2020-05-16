@@ -1,28 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: allaboutecm.model.MusicianInstrumentUnitTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.007 s <<< FAILURE! - in allaboutecm.model.MusicianInstrumentUnitTest
-allaboutecm.model.MusicianInstrumentUnitTest.musicalInstrumentCannotBeNull  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.NullPointerException
-	at allaboutecm.model.MusicianInstrumentUnitTest.setUp(MusicianInstrumentUnitTest.java:20)
-
-allaboutecm.model.MusicianInstrumentUnitTest.musicianCannotBeNull  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
-	at allaboutecm.model.MusicianInstrumentUnitTest.setUp(MusicianInstrumentUnitTest.java:20)
-
-allaboutecm.model.MusicianInstrumentUnitTest.musicianAndMusicianInstrumentCannotBeNull  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
-	at allaboutecm.model.MusicianInstrumentUnitTest.setUp(MusicianInstrumentUnitTest.java:20)
-
-allaboutecm.model.MusicianInstrumentUnitTest.musicianInstrumentCannotBeNull  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
-	at allaboutecm.model.MusicianInstrumentUnitTest.setUp(MusicianInstrumentUnitTest.java:20)
-
-allaboutecm.model.MusicianInstrumentUnitTest.MusicianCannotBeNull  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
-	at allaboutecm.model.MusicianInstrumentUnitTest.setUp(MusicianInstrumentUnitTest.java:20)
-
-allaboutecm.model.MusicianInstrumentUnitTest.sameNameAndNumberMeansSameAlbum  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
-	at allaboutecm.model.MusicianInstrumentUnitTest.setUp(MusicianInstrumentUnitTest.java:20)
-
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in allaboutecm.model.MusicianInstrumentUnitTest

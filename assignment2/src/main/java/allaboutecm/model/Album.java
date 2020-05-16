@@ -46,7 +46,7 @@ public class Album extends Entity {
     private URL albumURL;
 
     @Property(name="tracks")
-    private HashMap<String, Double> tracks;
+    private List<String> tracks;
 
     @Property(name="style")
     private String style;
@@ -92,7 +92,7 @@ public class Album extends Entity {
 
         featuredMusicians = Lists.newArrayList();
         instruments = Sets.newHashSet();
-        tracks = new HashMap<>();
+        tracks = new ArrayList<>();
     }
 
     public String getRecordNumber() {
@@ -141,22 +141,17 @@ public class Album extends Entity {
         this.albumURL = albumURL;
     }
 
-    public HashMap<String, Double> getTracks() {
+    public List<String> getTracks() {
         return tracks;
     }
 
-    public void setTracks(HashMap<String, Double> tracks) {
+    public void setTracks(ArrayList<String> tracks) {
         notNull(tracks);
-        if (tracks.isEmpty()||tracks.containsKey("")){
+        if (tracks.isEmpty()||tracks.contains("")){
             throw new IllegalArgumentException("The tracks cannot be blank!");
         }
         else{
             this.tracks = tracks;}
-        tracks.forEach((key, value) -> {
-            if (value <= 0.0) {
-                throw new IllegalArgumentException("The tracks length cannot less than 0!");
-            }
-        });
     }
 
     public int getReleaseYear() {

@@ -180,34 +180,11 @@ class Neo4jDAOUnitTest {
         assertEquals(0, musicians.size(),"Delete failed");
     }
 
-
     @Test
-    public void deleteMusicianCauseDeleteMusicianInstrument() throws MalformedURLException {
+    public void deleteNotExistMusician() throws MalformedURLException {
         Musician musician = new Musician("Keith Jarrett");
         musician.setMusicianUrl(new URL("https://www.keithjarrett.org/"));
-        dao.createOrUpdate(musician);
-
-        MusicalInstrument musicalInstrument = new MusicalInstrument("piano");
-        Set<MusicalInstrument> set = new HashSet<>();
-        set.add(musicalInstrument);
-
-        MusicianInstrument musicianInstrument = new MusicianInstrument(musician,set);
-        dao.createOrUpdate(musicianInstrument);
-//        Musician musician1 = new Musician("K s");
-//        musician1.setMusicianUrl(new URL("https://www.keithjarrettt.org/"));
-//        dao.createOrUpdate(musician1);
-//
-//        MusicalInstrument musicalInstrument1 = new MusicalInstrument("pianoo");
-//        Set<MusicalInstrument> set1 = new HashSet<>();
-//        set1.add(musicalInstrument1);
-//
-//        MusicianInstrument musicianInstrument1 = new MusicianInstrument(musician1,set1);
-//        dao.createOrUpdate(musicianInstrument1);
-
-        dao.delete(musician);
-
-        Collection<MusicianInstrument> musicianInstruments = dao.loadAll(MusicianInstrument.class);
-        assertEquals(1, musicianInstruments.size(),"Delete failed");
+        assertThrows(IllegalArgumentException.class, () -> dao.delete(musician));
     }
 
     @Test

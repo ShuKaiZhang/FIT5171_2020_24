@@ -62,29 +62,7 @@ public class Neo4jDAO implements DAO {
         T exist = findExistingEntity(entity,clazz);
         if(exist == null) {
             throw new IllegalArgumentException("The entity does not exist");
-        }
-        else if(clazz.equals(Musician.class) ) {
-            Musician musician = (Musician)entity;
-//            Filters filters1 = new Filters();
-//            filters1.add(new Filter("musician", EQUALS, musician));
-//            Collection<MusicianInstrument> musicianInstruments = this.loadAll(MusicianInstrument.class);
-//            System.out.println(musicianInstruments);
-//            if (!musicianInstruments.isEmpty()) {
-//                for (MusicianInstrument musicianInstrument : musicianInstruments) {
-//                    session.delete(musicianInstrument);
-//                }
-//            }
-
-            Filters filters2 = new Filters();
-            filters2.add(new Filter("featuredMusicians", CONTAINING, musician));
-            Collection<Album> albums = session.loadAll(Album.class, filters2);
-            for(Album album:albums){
-                List<Musician> list = album.getFeaturedMusicians();
-                if (!albums.isEmpty()) {
-                    list.remove(musician);
-                    album.setFeaturedMusicians(list);
-                }
-            }
+        } else {
             session.delete(entity);
         }
     }
