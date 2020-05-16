@@ -68,6 +68,21 @@ class AlbumUnitTest {
         assertThrows(IllegalArgumentException.class, () -> album.setReleaseYear(arg));
     }
 
+    @Test
+    @DisplayName("Tracks cannot be blank")
+    public void TracksCannotBeBlank() {
+        HashMap<String, Double> arg = new HashMap<>();
+        arg.put("",3.2);
+        assertThrows(IllegalArgumentException.class, () -> album.setTracks(arg));
+    }
+
+    @Test
+    @DisplayName("Tracks length cannot less than 0")
+    public void TracksLengthCannotLessThan0() {
+        HashMap<String, Double> arg = new HashMap<>();
+        arg.put("Hahaha",0.0);
+        assertThrows(IllegalArgumentException.class, () -> album.setTracks(arg));
+    }
 
     @Test
     @DisplayName("Tracks cannot be null")
