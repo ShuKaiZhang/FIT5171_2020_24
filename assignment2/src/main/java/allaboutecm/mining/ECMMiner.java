@@ -7,10 +7,7 @@ import com.google.common.collect.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * TODO: implement and test the methods in this class.
@@ -33,6 +30,9 @@ public class ECMMiner {
      * When startYear/endYear is negative, that means startYear/endYear is ignored.
      */
     public List<Musician> mostProlificMusicians(int k, int startYear, int endYear) {
+        if(startYear < 1900 || endYear <1900 || startYear > Calendar.getInstance().get(Calendar.YEAR) || endYear > Calendar.getInstance().get(Calendar.YEAR)) {
+            return Lists.newArrayList();
+        }
         Collection<Musician> musicians = dao.loadAll(Musician.class);
         Map<String, Musician> nameMap = Maps.newHashMap();
         for (Musician m : musicians) {

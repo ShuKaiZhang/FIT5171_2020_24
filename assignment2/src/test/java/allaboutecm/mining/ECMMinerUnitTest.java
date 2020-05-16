@@ -7,6 +7,8 @@ import allaboutecm.model.Musician;
 import com.google.common.collect.Sets;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.List;
 
@@ -27,6 +29,21 @@ class ECMMinerUnitTest {
         dao = mock(Neo4jDAO.class);
         ecmMiner = new ECMMiner(dao);
     }
+
+    @ParameterizedTest
+    @ValueSource(ints = {-20, -1, 0})
+    public void mostProlificMusiciansReturnEmptyWhenKInvalid(int k) {
+        Album album = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        Musician musician = new Musician("Keith Jarrett");
+        musician.setAlbums(Sets.newHashSet(album));
+
+        when(dao.loadAll(Musician.class)).thenReturn(Sets.newHashSet(musician));
+
+        List<Musician> musicians = ecmMiner.mostProlificMusicians(k, 1975,2000);
+        assertEquals(0, musicians.size());
+    }
+
+
 
     @Test
     public void shouldReturnTheMusicianWhenThereIsOnlyOne() {
