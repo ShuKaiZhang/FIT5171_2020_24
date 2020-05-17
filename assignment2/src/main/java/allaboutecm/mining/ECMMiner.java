@@ -91,6 +91,9 @@ public class ECMMiner {
      * @Param k the number of musicians to be returned.
      */
     public List<Musician> mostTalentedMusicians(int k) {
+        if(k <= 0) {
+            return Lists.newArrayList();
+        }
         int count = k;
         Collection<MusicianInstrument> musicianInstruments = dao.loadAll(MusicianInstrument.class);
         List<MusicianInstrument> list = new ArrayList<>(musicianInstruments);
@@ -161,7 +164,41 @@ public class ECMMiner {
      */
 
     public List<Integer> busiestYears(int k) {
-        return Lists.newArrayList();
+        if (k > 0){
+            Collection<Album> albums = dao.loadAll(Album.class);
+            ListMultimap<Integer, Album> albumMap = MultimapBuilder.treeKeys().arrayListValues().build();
+            ListMultimap<Integer, Integer> countMap = MultimapBuilder.treeKeys().arrayListValues().build();
+            for (Album a: albums){
+                int year = a.getReleaseYear();
+                albumMap.put(year,a);
+            }
+
+            for (Integer i : albumMap.keySet()) {
+                int totalAlbum = albumMap.get(i).size();
+                countMap.put(totalAlbum,i);
+            }
+
+            List<Integer> result = Lists.newArrayList();
+            List<Integer> sortedKeys = Lists.newArrayList(countMap.keySet());
+            sortedKeys.sort(Ordering.natural().reverse());
+            for (Integer count: sortedKeys) {
+                List<Integer> list = countMap.get(count);
+                if (result.size() + list.size() >= k) {
+                    int remain = k - result.size();
+                    for (int i = 0; i < remain; i++) {
+                        result.add(list.get(i));
+                    }
+                }else {
+                    result.addAll(list);
+                }
+            }
+
+            return result;
+
+        } else {
+            List<Integer> result = new ArrayList<>();
+            return result;
+        }
     }
 
     /**
@@ -174,6 +211,26 @@ public class ECMMiner {
      */
 
     public List<Album> mostSimilarAlbums(int k, Album album) {
+        if(k <= 0) {
+            return Lists.newArrayList();
+        }
+        int count = k;
+        Collection<Album> albums = dao.loadAll(Album.class);
+        List<Album> list = new ArrayList<>(albums);
+        List<Musician> musician = album.getFeaturedMusicians();
+        Map<Album, Double> map = Maps.newHashMap();
+        for (Album a : list) {
+            double same = 0;
+            for (Musician m:musician){
+                if (a.getFeaturedMusicians().contains(m)) {
+                    same++;
+                }
+            }
+            map.put(a,same/musician.size());
+        }
+
+
         return Lists.newArrayList();
     }
+
 }

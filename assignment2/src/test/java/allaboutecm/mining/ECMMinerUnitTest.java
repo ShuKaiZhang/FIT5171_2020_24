@@ -8,6 +8,7 @@ import allaboutecm.model.Musician;
 import allaboutecm.model.MusicianInstrument;
 import com.google.common.collect.Sets;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -185,5 +186,57 @@ class ECMMinerUnitTest {
         List<Musician> musicians = ecmMiner.mostSocialMusicians(1);
         assertEquals(1, musicians.size());
         assertEquals(musicians.get(0), musician1);
+    }
+//=======
+    @ParameterizedTest
+    @ValueSource(ints = {-1, 0})
+    @DisplayName("K in busiest year is <= 0")
+    public void KInBusinessIsNegtive(int arg){
+        Album album = new Album(1975,"ECM 1064/65", "The Köln Concert");
+        Album album1 = new Album(1980,"ECM 1029/66", "Jay Zhou");
+        Album album2 = new Album(1985,"ECM 1033/67", "May Day");
+        Album album3 = new Album(1990,"ECM 1068/68", "I love JJ");
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album,album1,album2,album3));
+        List<Integer> busiestYear = ecmMiner.busiestYears(arg);
+        assertEquals(0,busiestYear.size());
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3})
+    @DisplayName("K in busiest year is normal")
+    public void KInBusinessIsNormal(int arg){
+        Album album = new Album(1975,"ECM 1064/65", "The Köln Concert");
+        Album album1 = new Album(1980,"ECM 1029/66", "Jay Zhou");
+        Album album2 = new Album(1985,"ECM 1033/67", "May Day");
+        Album album3 = new Album(1990,"ECM 1068/68", "I love JJ");
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album,album1,album2,album3));
+        List<Integer> busiestYear = ecmMiner.busiestYears(arg);
+        assertEquals(arg,busiestYear.size());
+    }
+
+    @Test
+    @DisplayName("K in busiest year is exceed the released years")
+    public void KInBusinessIsExceed(){
+        Album album = new Album(1975,"ECM 1064/65", "The Köln Concert");
+        Album album1 = new Album(1980,"ECM 1029/66", "Jay Zhou");
+        Album album2 = new Album(1985,"ECM 1033/67", "May Day");
+        Album album3 = new Album(1990,"ECM 1068/68", "I love JJ");
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album,album1,album2,album3));
+        List<Integer> busiestYear = ecmMiner.busiestYears(5);
+        assertEquals(4,busiestYear.size());
+    }
+
+
+    @Test
+    @DisplayName("the multiple busiest year test")
+    public void multipleBusiestYearTest(){
+        Album album = new Album(1980,"ECM 1064/65", "The Köln Concert");
+        Album album1 = new Album(1980,"ECM 1029/66", "Jay Zhou");
+        Album album2 = new Album(1985,"ECM 1033/67", "May Day");
+        Album album3 = new Album(1990,"ECM 1068/68", "I love JJ");
+
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album,album1,album2,album3));
+        List<Integer> albums = ecmMiner.busiestYears(4);
+        assertEquals(3, albums.size());
     }
 }
