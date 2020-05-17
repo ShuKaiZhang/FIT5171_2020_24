@@ -197,6 +197,8 @@ public class ECMMiner {
             map.put(a,same/musician.size());
         }
 
+
         return Lists.newArrayList();
     }
+
 }
