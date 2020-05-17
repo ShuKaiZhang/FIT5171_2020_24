@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="db2924de-ff55-4a96-9c34-787035f4917f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/allaboutecm/dataaccess/neo4j/Neo4jDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/allaboutecm/dataaccess/neo4j/Neo4jDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/allaboutecm/dataaccess/neo4j/Neo4jDAOUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allaboutecm/dataaccess/neo4j/Neo4jDAOUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/allaboutecm/dataaccess/neo4j/Neo4jDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/allaboutecm/dataaccess/neo4j/Neo4jDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/allaboutecm/dataaccess/neo4j/Neo4jDAOUnitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/allaboutecm/dataaccess/neo4j/Neo4jDAOUnitTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/allaboutecm/mining/ECMMiner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/allaboutecm/mining/ECMMiner.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +41,18 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Harry\Desktop\FIT5171\assignment2\assignment2\src\test\java\allaboutecm\model" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.trya">
     <configuration name="trya" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -150,6 +160,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="395" y="91" key="#Inspections" timestamp="1589708379113">
