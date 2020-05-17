@@ -5,6 +5,7 @@ import allaboutecm.model.Album;
 import allaboutecm.model.Musician;
 import allaboutecm.model.MusicianInstrument;
 import com.google.common.collect.*;
+import org.neo4j.cypher.internal.frontend.v3_4.phases.Do;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -219,7 +220,7 @@ public class ECMMiner {
         Collection<Album> albums = dao.loadAll(Album.class);
         List<Album> list = new ArrayList<>(albums);
         List<Musician> musician = album.getFeaturedMusicians();
-        Map<Album, Double> map = Maps.newHashMap();
+        ListMultimap<Double, Album> map = MultimapBuilder.treeKeys().arrayListValues().build();
         for (Album a : list) {
             double same = 0;
             for (Musician m:musician){
@@ -227,11 +228,24 @@ public class ECMMiner {
                     same++;
                 }
             }
-            map.put(a,same/musician.size());
+            map.put(same/musician.size(), a);
+        }
+        List<Album> result = Lists.newArrayList();
+        List<Double> sortedKeys = Lists.newArrayList(map.keySet());
+        sortedKeys.sort(Ordering.natural().reverse());
+        for (Double d : sortedKeys) {
+            List<Album> a = map.get(d);
+            if (result.size() + a.size() >= k) {
+                int newAddition = k - result.size();
+                for (int i = 0; i < newAddition; i++) {
+                    result.add(a.get(i));
+                }
+            } else {
+                result.addAll(a);
+            }
         }
 
-
-        return Lists.newArrayList();
+        return result;
     }
 
 }
