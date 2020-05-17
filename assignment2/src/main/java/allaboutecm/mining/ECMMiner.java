@@ -91,6 +91,9 @@ public class ECMMiner {
      * @Param k the number of musicians to be returned.
      */
     public List<Musician> mostTalentedMusicians(int k) {
+        if(k <= 0) {
+            return Lists.newArrayList();
+        }
         int count = k;
         Collection<MusicianInstrument> musicianInstruments = dao.loadAll(MusicianInstrument.class);
         List<MusicianInstrument> list = new ArrayList<>(musicianInstruments);
@@ -142,6 +145,24 @@ public class ECMMiner {
      */
 
     public List<Album> mostSimilarAlbums(int k, Album album) {
+        if(k <= 0) {
+            return Lists.newArrayList();
+        }
+        int count = k;
+        Collection<Album> albums = dao.loadAll(Album.class);
+        List<Album> list = new ArrayList<>(albums);
+        List<Musician> musician = album.getFeaturedMusicians();
+        Map<Album, Double> map = Maps.newHashMap();
+        for (Album a : list) {
+            double same = 0;
+            for (Musician m:musician){
+                if (a.getFeaturedMusicians().contains(m)) {
+                    same++;
+                }
+            }
+            map.put(a,same/musician.size());
+        }
+
         return Lists.newArrayList();
     }
 }

@@ -13,6 +13,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -37,7 +44,20 @@
       <recent name="C:\Users\Harry\Desktop\FIT5171\assignment2\assignment2\src\test\java\allaboutecm\model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ECMMinerUnitTest.mostTalentedMusiciansNormalTest">
+  <component name="RunManager" selected="Application.trya">
+    <configuration name="trya" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.trya" />
+      <module name="fit5171-2020-XX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="allaboutecm.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ECMMinerUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
@@ -64,22 +84,6 @@
       <option name="PACKAGE_NAME" value="allaboutecm.mining" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
       <option name="METHOD_NAME" value="mostProlificMusiciansNormalTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ECMMinerUnitTest.mostProlificMusiciansReturnOnlyOneMusician" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fit5171-2020-XX" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="allaboutecm.mining.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="allaboutecm.mining" />
-      <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
-      <option name="METHOD_NAME" value="mostProlificMusiciansReturnOnlyOneMusician" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.trya" />
         <item itemvalue="JUnit.ECMMinerUnitTest.mostTalentedMusiciansNormalTest" />
         <item itemvalue="JUnit.ECMMinerUnitTest.mostProlificMusiciansNormalTest" />
         <item itemvalue="JUnit.ECMMinerUnitTest" />
         <item itemvalue="JUnit.ECMMinerUnitTest.shouldReturnOneMusicianWhenMusiciansHaveSameNumberOfAlbums" />
-        <item itemvalue="JUnit.ECMMinerUnitTest.mostProlificMusiciansReturnOnlyOneMusician" />
       </list>
     </recent_temporary>
   </component>
@@ -148,6 +152,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="395" y="91" key="#Inspections" timestamp="1589708379113">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="395" y="91" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1589708379113" />
     <state x="1054" y="100" width="773" height="847" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589543265004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -156,25 +164,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589703010185" />
-    <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1589704193005">
+    <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1589708019037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589704193005" />
+    <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589708019037" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589681157660" />
-    <state width="1493" height="214" key="GridCell.Tab.0.center" timestamp="1589704193005">
+    <state width="1493" height="214" key="GridCell.Tab.0.center" timestamp="1589708019037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589704193005" />
+    <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589708019037" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589681157660" />
-    <state width="1493" height="214" key="GridCell.Tab.0.left" timestamp="1589704193005">
+    <state width="1493" height="214" key="GridCell.Tab.0.left" timestamp="1589708019037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589704193005" />
+    <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589708019037" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589681157660" />
-    <state width="1493" height="214" key="GridCell.Tab.0.right" timestamp="1589704193005">
+    <state width="1493" height="214" key="GridCell.Tab.0.right" timestamp="1589708019037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589704193005" />
+    <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589708019037" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589681157660" />
     <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1589543172834">
       <screen x="0" y="0" width="1920" height="1040" />
