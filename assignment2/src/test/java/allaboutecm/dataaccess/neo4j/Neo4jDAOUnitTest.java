@@ -210,8 +210,7 @@ class Neo4jDAOUnitTest {
     }
 
     @Test
-    public void testFindMusicianByBiography() throws MalformedURLException{
-
+    public void testFindMusicianByBiography(){
         Musician musician = new Musician("Keith Jarrett");
         musician.setBiography("handsome");
 

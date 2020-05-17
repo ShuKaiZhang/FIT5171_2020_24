@@ -30,7 +30,7 @@ public class ECMMiner {
      * When startYear/endYear is negative, that means startYear/endYear is ignored.
      */
     public List<Musician> mostProlificMusicians(int k, int startYear, int endYear) {
-        if(startYear < 1900 || endYear <1900 || startYear > Calendar.getInstance().get(Calendar.YEAR) || endYear > Calendar.getInstance().get(Calendar.YEAR)) {
+        if(startYear < 1900 || endYear <1900 || startYear > Calendar.getInstance().get(Calendar.YEAR) || endYear > Calendar.getInstance().get(Calendar.YEAR)||k <= 0) {
             return Lists.newArrayList();
         }
         Collection<Musician> musicians = dao.loadAll(Musician.class);
@@ -67,9 +67,10 @@ public class ECMMiner {
         sortedKeys.sort(Ordering.natural().reverse());
         for (Integer count : sortedKeys) {
             List<Musician> list = countMap.get(count);
-            if (list.size() >= k) {
-                break;
-            }
+//            if (list.size() >= k) {
+//                break;
+//            }
+//            ??????????????
             if (result.size() + list.size() >= k) {
                 int newAddition = k - result.size();
                 for (int i = 0; i < newAddition; i++) {

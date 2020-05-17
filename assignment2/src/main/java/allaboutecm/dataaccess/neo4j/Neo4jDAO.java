@@ -79,6 +79,7 @@ public class Neo4jDAO implements DAO {
             return musicians.iterator().next();
         }
     }
+
     @Override
     public Musician findMusicianByUrl(URL musicianUrl) {
         Filters filters = new Filters();
