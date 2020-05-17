@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -154,5 +155,35 @@ class ECMMinerUnitTest {
 
         assertEquals(1, musicians.size());
         assertTrue(musicians.contains(musician1));
+    }
+
+    @Test
+    public void mostSocialMusiciansNormalTest() {
+        Musician musician1 = new Musician("Keith Jarrett");
+        Musician musician2 = new Musician("KK Slider");
+        Musician musician3 = new Musician("Alan Walker");
+
+        Album album1 = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        Album album2 = new Album(1976, "ECM 1064/62", "The Köln");
+
+        List<Musician> musicianList1 = new ArrayList<>();
+        List<Musician> musicianList2 = new ArrayList<>();
+
+        musicianList1.add(musician1);
+        musicianList1.add(musician2);
+        musicianList2.add(musician1);
+        musicianList2.add(musician3);
+
+        album1.setFeaturedMusicians(musicianList1);
+        album2.setFeaturedMusicians(musicianList2);
+
+        musician1.setAlbums(Sets.newHashSet(album1, album2));
+        musician2.setAlbums(Sets.newHashSet(album1));
+        musician3.setAlbums(Sets.newHashSet(album2));
+
+        when(dao.loadAll(Musician.class)).thenReturn(Sets.newHashSet(musician1, musician2, musician3));
+        List<Musician> musicians = ecmMiner.mostSocialMusicians(1);
+        assertEquals(1, musicians.size());
+        assertEquals(musicians.get(0), musician1);
     }
 }
