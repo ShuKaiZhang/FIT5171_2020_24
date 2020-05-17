@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db2924de-ff55-4a96-9c34-787035f4917f" name="Default Changelist" comment="" />
+    <list default="true" id="db2924de-ff55-4a96-9c34-787035f4917f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/allaboutecm/mining/ECMMinerUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allaboutecm/mining/ECMMinerUnitTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +41,7 @@
       <recent name="C:\Users\Harry\Desktop\FIT5171\assignment2\assignment2\src\test\java\allaboutecm\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.trya">
+  <component name="RunManager" selected="JUnit.ECMMinerUnitTest.KInBusinessIsExceed (1)">
     <configuration name="trya" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="allaboutecm.model.trya" />
       <module name="fit5171-2020-XX" />
@@ -52,7 +55,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ECMMinerUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ECMMinerUnitTest.KInBusinessIsExceed (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
@@ -62,28 +65,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.mining" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ECMMinerUnitTest.mostProlificMusiciansNormalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fit5171-2020-XX" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="allaboutecm.mining.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="allaboutecm.mining" />
-      <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
-      <option name="METHOD_NAME" value="mostProlificMusiciansNormalTest" />
+      <option name="METHOD_NAME" value="KInBusinessIsExceed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ECMMinerUnitTest.mostTalentedMusiciansNormalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ECMMinerUnitTest.KInBusinessIsExceed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
@@ -93,13 +81,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.mining" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
-      <option name="METHOD_NAME" value="mostTalentedMusiciansNormalTest" />
+      <option name="METHOD_NAME" value="KInBusinessIsExceed(int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ECMMinerUnitTest.shouldReturnOneMusicianWhenMusiciansHaveSameNumberOfAlbums" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ECMMinerUnitTest.KInBusinessIsNegtive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
@@ -109,7 +97,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.mining" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
-      <option name="METHOD_NAME" value="shouldReturnOneMusicianWhenMusiciansHaveSameNumberOfAlbums" />
+      <option name="METHOD_NAME" value="KInBusinessIsNegtive(int)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ECMMinerUnitTest.KInBusinessIsNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fit5171-2020-XX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="allaboutecm.mining.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="allaboutecm.mining" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
+      <option name="METHOD_NAME" value="KInBusinessIsNormal(int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -117,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ECMMinerUnitTest.KInBusinessIsExceed (1)" />
+        <item itemvalue="JUnit.ECMMinerUnitTest.KInBusinessIsExceed" />
+        <item itemvalue="JUnit.ECMMinerUnitTest.KInBusinessIsNormal" />
+        <item itemvalue="JUnit.ECMMinerUnitTest.KInBusinessIsNegtive" />
         <item itemvalue="Application.trya" />
-        <item itemvalue="JUnit.ECMMinerUnitTest.mostTalentedMusiciansNormalTest" />
-        <item itemvalue="JUnit.ECMMinerUnitTest.mostProlificMusiciansNormalTest" />
-        <item itemvalue="JUnit.ECMMinerUnitTest" />
-        <item itemvalue="JUnit.ECMMinerUnitTest.shouldReturnOneMusicianWhenMusiciansHaveSameNumberOfAlbums" />
       </list>
     </recent_temporary>
   </component>
@@ -158,26 +162,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589703010185" />
-    <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1589708019037">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1589712513207">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589708019037" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589681157660" />
-    <state width="1493" height="214" key="GridCell.Tab.0.center" timestamp="1589708019037">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589712513207" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1589712513207">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589708019037" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589681157660" />
-    <state width="1493" height="214" key="GridCell.Tab.0.left" timestamp="1589708019037">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589712513207" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1589712513207">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589708019037" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589681157660" />
-    <state width="1493" height="214" key="GridCell.Tab.0.right" timestamp="1589708019037">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589712513207" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1589712513207">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589708019037" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589681157660" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589712513207" />
     <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1589543172834">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
