@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/allaboutecm/mining/ECMMiner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/allaboutecm/mining/ECMMiner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/allaboutecm/mining/ECMMinerUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allaboutecm/mining/ECMMinerUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/allaboutecm/mining/ECMMiner$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/allaboutecm/mining/ECMMiner$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/allaboutecm/mining/ECMMiner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/allaboutecm/mining/ECMMiner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/allaboutecm/mining/ECMMinerUnitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/allaboutecm/mining/ECMMinerUnitTest.class" afterDir="false" />
     </list>
@@ -58,21 +57,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ECMMinerUnitTest.mostSimilarAlbumsNormalTest">
-    <configuration name="trya" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.trya" />
-      <module name="fit5171-2020-XX" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="allaboutecm.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ECMMinerUnitTest.KInBusinessIsNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ECMMinerUnitTest">
+    <configuration name="ECMMinerUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
@@ -82,13 +68,28 @@
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.mining" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
-      <option name="METHOD_NAME" value="KInBusinessIsNormal(int)" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ECMMinerUnitTest.mostSimilarAlbumsLessThanK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fit5171-2020-XX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="allaboutecm.mining.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="allaboutecm.mining" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
+      <option name="METHOD_NAME" value="mostSimilarAlbumsLessThanK" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ECMMinerUnitTest.mostProlificMusiciansNormalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ECMMinerUnitTest.mostTalentedMusiciansInvalidK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
@@ -98,13 +99,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.mining" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
-      <option name="METHOD_NAME" value="mostProlificMusiciansNormalTest" />
+      <option name="METHOD_NAME" value="mostTalentedMusiciansInvalidK(int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ECMMinerUnitTest.mostSimilarAlbumsNormalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ECMMinerUnitTest.mostTalentedMusiciansLessThanK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
@@ -114,13 +115,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.mining" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
-      <option name="METHOD_NAME" value="mostSimilarAlbumsNormalTest" />
+      <option name="METHOD_NAME" value="mostTalentedMusiciansLessThanK" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ECMMinerUnitTest.mostTalentedMusiciansNormalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ECMMinerUnitTest.mostTalentedMusiciansSameValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
@@ -130,7 +131,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.mining" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
-      <option name="METHOD_NAME" value="mostTalentedMusiciansNormalTest" />
+      <option name="METHOD_NAME" value="mostTalentedMusiciansSameValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -138,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ECMMinerUnitTest.mostSimilarAlbumsNormalTest" />
-        <item itemvalue="JUnit.ECMMinerUnitTest.KInBusinessIsNormal" />
-        <item itemvalue="Application.trya" />
-        <item itemvalue="JUnit.ECMMinerUnitTest.mostTalentedMusiciansNormalTest" />
-        <item itemvalue="JUnit.ECMMinerUnitTest.mostProlificMusiciansNormalTest" />
+        <item itemvalue="JUnit.ECMMinerUnitTest" />
+        <item itemvalue="JUnit.ECMMinerUnitTest.mostTalentedMusiciansLessThanK" />
+        <item itemvalue="JUnit.ECMMinerUnitTest.mostTalentedMusiciansSameValue" />
+        <item itemvalue="JUnit.ECMMinerUnitTest.mostTalentedMusiciansInvalidK" />
+        <item itemvalue="JUnit.ECMMinerUnitTest.mostSimilarAlbumsLessThanK" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +172,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
