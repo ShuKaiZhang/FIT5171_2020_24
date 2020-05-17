@@ -132,7 +132,41 @@ public class ECMMiner {
      */
 
     public List<Integer> busiestYears(int k) {
-        return Lists.newArrayList();
+        if (k > 0){
+            Collection<Album> albums = dao.loadAll(Album.class);
+            ListMultimap<Integer, Album> albumMap = MultimapBuilder.treeKeys().arrayListValues().build();
+            ListMultimap<Integer, Integer> countMap = MultimapBuilder.treeKeys().arrayListValues().build();
+            for (Album a: albums){
+                int year = a.getReleaseYear();
+                albumMap.put(year,a);
+            }
+
+            for (Integer i : albumMap.keySet()) {
+                int totalAlbum = albumMap.get(i).size();
+                countMap.put(totalAlbum,i);
+            }
+
+            List<Integer> result = Lists.newArrayList();
+            List<Integer> sortedKeys = Lists.newArrayList(countMap.keySet());
+            sortedKeys.sort(Ordering.natural().reverse());
+            for (Integer count: sortedKeys) {
+                List<Integer> list = countMap.get(count);
+                if (result.size() + list.size() >= k) {
+                    int remain = k - result.size();
+                    for (int i = 0; i < remain; i++) {
+                        result.add(list.get(i));
+                    }
+                }else {
+                    result.addAll(list);
+                }
+            }
+
+            return result;
+
+        } else {
+            List<Integer> result = new ArrayList<>();
+            return result;
+        }
     }
 
     /**
