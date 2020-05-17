@@ -141,7 +141,6 @@ public class ECMMiner {
         List<Musician> result = Lists.newArrayList();
         List<Integer> sorting = Lists.newArrayList(musicianList.keySet());
         sorting.sort(Ordering.natural().reverse());
-
         for(Integer count : sorting) {
             List<Musician> list = musicianList.get(count);
             if(result.size() + list.size() >= k) {
@@ -153,7 +152,9 @@ public class ECMMiner {
                 result.addAll(list);
             }
         }
-        System.out.println(result);
+        if (k>result.size()){
+            k=result.size();
+        }
         return result;
     }
 
