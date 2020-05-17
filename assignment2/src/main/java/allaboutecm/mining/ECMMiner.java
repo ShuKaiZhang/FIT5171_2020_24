@@ -3,6 +3,7 @@ package allaboutecm.mining;
 import allaboutecm.dataaccess.DAO;
 import allaboutecm.model.Album;
 import allaboutecm.model.Musician;
+import allaboutecm.model.MusicianInstrument;
 import com.google.common.collect.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -90,8 +91,25 @@ public class ECMMiner {
      * @Param k the number of musicians to be returned.
      */
     public List<Musician> mostTalentedMusicians(int k) {
+        int count = k;
+        Collection<MusicianInstrument> musicianInstruments = dao.loadAll(MusicianInstrument.class);
+        List<MusicianInstrument> list = new ArrayList<>(musicianInstruments);
+        Collections.sort(list, new Comparator<MusicianInstrument>() {
+            @Override
+            public int compare(MusicianInstrument o1, MusicianInstrument o2) {
+                return o2.getMusicalInstruments().size() - o1.getMusicalInstruments().size();
+            }
+        });
+        List<Musician> result = Lists.newArrayList();
+        if (count>list.size()){
+            count=list.size();
+        }
+        List<MusicianInstrument> selected = list.subList(0, count);
 
-        return Lists.newArrayList();
+        for (MusicianInstrument m:selected){
+            result.add(m.getMusician());
+        }
+        return result;
     }
 
     /**

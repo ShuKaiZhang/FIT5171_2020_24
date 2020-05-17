@@ -3,7 +3,9 @@ package allaboutecm.mining;
 import allaboutecm.dataaccess.DAO;
 import allaboutecm.dataaccess.neo4j.Neo4jDAO;
 import allaboutecm.model.Album;
+import allaboutecm.model.MusicalInstrument;
 import allaboutecm.model.Musician;
+import allaboutecm.model.MusicianInstrument;
 import com.google.common.collect.Sets;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -129,5 +131,28 @@ class ECMMinerUnitTest {
 
         assertEquals(2, musicians.size());
         assertTrue(musicians.contains(musician1)&&musicians.contains(musician2));
+    }
+
+
+
+    @Test
+    public void mostTalentedMusiciansNormalTest() {
+
+        Musician musician1 = new Musician("Keith Jarrett");
+        MusicianInstrument musicianInstrument1 = new MusicianInstrument(musician1,Sets.newHashSet(
+                new MusicalInstrument("Piano"),new MusicalInstrument("Guitar")));
+
+
+
+        Musician musician2 = new Musician("Keith Jt");
+        MusicianInstrument musicianInstrument2 = new MusicianInstrument(musician2,Sets.newHashSet(
+                new MusicalInstrument("Piano")));
+
+
+        when(dao.loadAll(MusicianInstrument.class)).thenReturn(Sets.newHashSet(musicianInstrument1,musicianInstrument2));
+        List<Musician> musicians = ecmMiner.mostTalentedMusicians(1);
+
+        assertEquals(1, musicians.size());
+        assertTrue(musicians.contains(musician1));
     }
 }
