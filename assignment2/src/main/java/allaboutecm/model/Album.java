@@ -212,9 +212,4 @@ public class Album extends Entity {
     public void setReleaseFormat(String releaseFormat) {
         this.releaseFormat = releaseFormat;
     }
-
-    @Override
-    public void setsetMusicianUrl(String s) {
-
-    }
 }

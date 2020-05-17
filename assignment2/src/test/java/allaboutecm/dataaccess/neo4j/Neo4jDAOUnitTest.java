@@ -141,17 +141,17 @@ class Neo4jDAOUnitTest {
                 new Musician("Yike Xu")
         );
 
-        for (Musician musician : musicianSet) {
+        for(Musician musician: musicianSet) {
             dao.createOrUpdate(musician);
         }
 
         Collection<Musician> musicians = dao.loadAll(Musician.class);
-        assertEquals(musicianSet.size(), musicians.size(), "loaded number is not right");
-        for (Musician musician : musicianSet) {
-            assertTrue(musicians.contains(musician), "Not contains :" + musician.getName());
+        assertEquals(musicianSet.size(),musicians.size(), "loaded number is not right");
+        for (Musician musician: musicianSet) {
+            assertTrue(musicians.contains(musician), "Not contains :"+ musician.getName());
         }
-        for (Musician musician : musicians) {
-            assertTrue(musicianSet.contains(musician), "Not contains :" + musician.getName());
+        for (Musician musician: musicians) {
+            assertTrue(musicianSet.contains(musician), "Not contains :"+ musician.getName());
         }
     }
 
@@ -177,7 +177,7 @@ class Neo4jDAOUnitTest {
         dao.delete(musician);
 
         Collection<Musician> musicians = dao.loadAll(Musician.class);
-        assertEquals(0, musicians.size(), "Delete failed");
+        assertEquals(0, musicians.size(),"Delete failed");
     }
 
     @Test
@@ -201,7 +201,7 @@ class Neo4jDAOUnitTest {
     @Test
     public void findMusicianByUrl() {
         Musician musician = new Musician("Keith Jarrett");
-        musician.setsetMusicianUrl("https://www.keithjarrett.org");
+
         dao.createOrUpdate(musician);
 
         Musician foundMusician = dao.findMusicianByUrl(musician.getMusicianUrl());
@@ -210,29 +210,15 @@ class Neo4jDAOUnitTest {
     }
 
     @Test
-    public void testFindMusicianByBiography() throws MalformedURLException {
+    public void testFindMusicianByBiography() throws MalformedURLException{
 
         Musician musician = new Musician("Keith Jarrett");
         musician.setBiography("handsome");
-        musician.setMusicianUrl(new URL("https://www.keithjarrett.org"));
+        musician.setMusicianUrl(new URL("https://www.keithjarrett.org") );
 
         dao.createOrUpdate(musician);
         dao.findMusicianByBiography("handsome");
-        Musician handsome = dao.findMusicianByBiography("handsome");
-        assertEquals(new URL("https://www.keithjarrett.org"), handsome.getMusicianUrl());
-    }
-
-    @Test
-    public void testFindMusicianByMusicianWiki() throws MalformedURLException {
-
-        Musician musician = new Musician("Keith Jarrett");
-        musician.setBiography("handsome");
-        musician.setMusicianWiki(new URL("https://www.KeithjarrettUrl.org"));
-        musician.setMusicianUrl(new URL("https://www.keithjarrett.org"));
-
-        dao.createOrUpdate(musician);
-        dao.findMusicianByMusicianWiki(new URL("https://www.KeithjarrettUrl.org"));
-        Musician handsome = dao.findMusicianByMusicianWiki(new URL("https://www.KeithjarrettUrl.org"));
-        assertEquals(new URL("https://www.keithjarrett.org"), handsome.getMusicianUrl());
+        Musician temp = dao.findMusicianByBiography("handsome");
+        assertEquals(new URL("https://www.keithjarrett.org"),temp.getMusicianUrl());
     }
 }

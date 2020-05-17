@@ -20,6 +20,4 @@ public interface DAO {
     Musician findMusicianByUrl(URL musicianUrl);
 
     Musician findMusicianByBiography(String biography);
-
-    Musician findMusicianByMusicianWiki(URL musicianWiki);
 }

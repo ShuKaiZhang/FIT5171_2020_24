@@ -112,9 +112,4 @@ public class Musician extends Entity {
     public void setMusicianUrl(URL musicianUrl) {
         this.musicianUrl = musicianUrl;
     }
-
-    @Override
-    public void setsetMusicianUrl(String s) {
-
-    }
 }

@@ -15,6 +15,4 @@ public abstract class Entity {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public abstract void setsetMusicianUrl(String s);
 }
