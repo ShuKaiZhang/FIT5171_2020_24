@@ -103,6 +103,18 @@ public class Neo4jDAO implements DAO {
         }
     }
 
+    @Override
+    public Musician findMusicianByMusicianWiki(URL MusicianWiki) {
+        Filters filters = new Filters();
+        filters.add(new Filter("biography", EQUALS, MusicianWiki));
+        Collection<Musician> musicians = session.loadAll(Musician.class, filters);
+        if (musicians.isEmpty()) {
+            return null;
+        } else {
+            return musicians.iterator().next();
+        }
+    }
+
     private <T extends Entity> T findExistingEntity(Entity entity, Class clazz) {
         Filters filters = new Filters();
         Collection<? extends Entity> collection = Sets.newLinkedHashSet();

@@ -77,4 +77,9 @@ public class MusicianInstrument extends Entity {
     public int hashCode() {
         return Objects.hash(musician, musicalInstruments);
     }
+
+    @Override
+    public void setsetMusicianUrl(String s) {
+
+    }
 }

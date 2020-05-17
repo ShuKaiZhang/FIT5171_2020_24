@@ -39,4 +39,9 @@ public class MusicalInstrument extends Entity {
     public int hashCode() {
         return Objects.hash(name);
     }
+
+    @Override
+    public void setsetMusicianUrl(String s) {
+
+    }
 }
