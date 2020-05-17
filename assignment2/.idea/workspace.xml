@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db2924de-ff55-4a96-9c34-787035f4917f" name="Default Changelist" comment="" />
+    <list default="true" id="db2924de-ff55-4a96-9c34-787035f4917f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/allaboutecm/dataaccess/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/allaboutecm/dataaccess/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/allaboutecm/dataaccess/neo4j/Neo4jDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/allaboutecm/dataaccess/neo4j/Neo4jDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/allaboutecm/dataaccess/neo4j/Neo4jDAOUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allaboutecm/dataaccess/neo4j/Neo4jDAOUnitTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +36,7 @@
       <recent name="C:\Users\Harry\Desktop\FIT5171\assignment2\assignment2\src\test\java\allaboutecm\model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ECMMinerUnitTest.mostProlificMusiciansReturnEmptyWhenKInvalid">
+  <component name="RunManager" selected="JUnit.Neo4jDAOUnitTest.findMusicianByName">
     <configuration name="ECMMinerUnitTest.mostProlificMusiciansReturnEmptyWhenKInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
@@ -43,22 +48,6 @@
       <option name="PACKAGE_NAME" value="allaboutecm.mining" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
       <option name="METHOD_NAME" value="mostProlificMusiciansReturnEmptyWhenKInvalid(int)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Neo4jDAOUnitTest.deleteAlbum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fit5171-2020-XX" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="allaboutecm.dataaccess.neo4j.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="allaboutecm.dataaccess.neo4j" />
-      <option name="MAIN_CLASS_NAME" value="allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest" />
-      <option name="METHOD_NAME" value="deleteAlbum" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -96,7 +85,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Neo4jDAOUnitTest.musicianInfoCanBeUpdated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Neo4jDAOUnitTest.findMusicianByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
@@ -106,7 +95,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="allaboutecm.dataaccess.neo4j" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest" />
-      <option name="METHOD_NAME" value="musicianInfoCanBeUpdated" />
+      <option name="METHOD_NAME" value="findMusicianByName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Neo4jDAOUnitTest.findMusicianByUrl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fit5171-2020-XX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="allaboutecm.dataaccess.neo4j.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="allaboutecm.dataaccess.neo4j" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest" />
+      <option name="METHOD_NAME" value="findMusicianByUrl" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -114,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Neo4jDAOUnitTest.findMusicianByName" />
+        <item itemvalue="JUnit.Neo4jDAOUnitTest.findMusicianByUrl" />
         <item itemvalue="JUnit.ECMMinerUnitTest.mostProlificMusiciansReturnEmptyWhenKInvalid" />
         <item itemvalue="JUnit.Neo4jDAOUnitTest.deleteMusicianCauseDeleteMusicianInstrument" />
         <item itemvalue="JUnit.Neo4jDAOUnitTest.deleteMusician" />
-        <item itemvalue="JUnit.Neo4jDAOUnitTest.deleteAlbum" />
-        <item itemvalue="JUnit.Neo4jDAOUnitTest.musicianInfoCanBeUpdated" />
       </list>
     </recent_temporary>
   </component>
@@ -135,37 +140,38 @@
       <workItem from="1589372086679" duration="5847000" />
       <workItem from="1589515723256" duration="3300000" />
       <workItem from="1589536077564" duration="10918000" />
+      <workItem from="1589678701925" duration="1205000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1054" y="100" width="773" height="847" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589543265004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1054" y="100" width="773" height="847" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589543265004" />
-    <state width="1860" height="280" key="GridCell.Tab.0.bottom" timestamp="1589629255638">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1589679825414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="606" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589519024379" />
-    <state width="1860" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589629255638" />
-    <state width="1860" height="280" key="GridCell.Tab.0.center" timestamp="1589629255638">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589679825414" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1589679825414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="606" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589519024379" />
-    <state width="1860" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589629255638" />
-    <state width="1860" height="280" key="GridCell.Tab.0.left" timestamp="1589629255638">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589679825414" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1589679825414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="606" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589519024379" />
-    <state width="1860" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589629255638" />
-    <state width="1860" height="280" key="GridCell.Tab.0.right" timestamp="1589629255638">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589679825414" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1589679825414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="606" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589519024379" />
-    <state width="1860" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589629255638" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589679825414" />
     <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1589543172834">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

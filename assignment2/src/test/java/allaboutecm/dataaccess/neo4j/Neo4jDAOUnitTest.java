@@ -198,4 +198,14 @@ class Neo4jDAOUnitTest {
         assertEquals(musician, foundMusician, "Nothing found");
     }
 
+    @Test
+    public void findMusicianByUrl() {
+        Musician musician = new Musician("Keith Jarrett");
+
+        dao.createOrUpdate(musician);
+
+        Musician foundMusician = dao.findMusicianByUrl(musician.getMusicianUrl());
+
+        assertEquals(musician, foundMusician, "Nothing found");
+    }
 }

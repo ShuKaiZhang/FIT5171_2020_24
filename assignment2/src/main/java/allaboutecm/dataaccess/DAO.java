@@ -3,6 +3,7 @@ package allaboutecm.dataaccess;
 import allaboutecm.model.Entity;
 import allaboutecm.model.Musician;
 
+import java.net.URL;
 import java.util.Collection;
 
 public interface DAO {
@@ -15,4 +16,6 @@ public interface DAO {
     <T extends Entity> void delete(T entity);
 
     Musician findMusicianByName(String name);
+
+    Musician findMusicianByUrl(URL musicianUrl);
 }

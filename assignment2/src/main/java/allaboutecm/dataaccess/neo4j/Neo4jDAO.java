@@ -12,6 +12,7 @@ import org.neo4j.ogm.cypher.Filters;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.transaction.Transaction;
 
+import java.net.URL;
 import java.util.Collection;
 import java.util.List;
 
@@ -71,6 +72,17 @@ public class Neo4jDAO implements DAO {
     public Musician findMusicianByName(String name) {
         Filters filters = new Filters();
         filters.add(new Filter("name", EQUALS, name));
+        Collection<Musician> musicians = session.loadAll(Musician.class, filters);
+        if (musicians.isEmpty()) {
+            return null;
+        } else {
+            return musicians.iterator().next();
+        }
+    }
+
+    public Musician findMusicianByUrl(URL musicianUrl) {
+        Filters filters = new Filters();
+        filters.add(new Filter("name", EQUALS, musicianUrl));
         Collection<Musician> musicians = session.loadAll(Musician.class, filters);
         if (musicians.isEmpty()) {
             return null;
