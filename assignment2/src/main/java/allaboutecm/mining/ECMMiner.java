@@ -123,7 +123,39 @@ public class ECMMiner {
      */
 
     public List<Musician> mostSocialMusicians(int k) {
-        return Lists.newArrayList();
+        if(k <= 0) {
+            return Lists.newArrayList();
+        }
+        Collection<Musician> musicians = dao.loadAll(Musician.class);
+        ListMultimap<Integer, Musician> musicianList = MultimapBuilder.treeKeys().arrayListValues().build();
+        //Collections.sort(list, (o1, o2) -> o2.getFeaturedMusicians().size() - o1.getFeaturedMusicians().size());
+
+        for(Musician m : musicians) {
+            Set<Album> albums = m.getAlbums();
+            HashSet<Musician> musicianHashSet = new HashSet<>();
+            for(Album a : albums) {
+                List<Musician> AlbumOfMusician = a.getFeaturedMusicians();
+                musicianHashSet.addAll(Sets.newHashSet(AlbumOfMusician));
+            }
+            musicianList.put(musicianHashSet.size() - 1, m);
+        }
+        List<Musician> result = Lists.newArrayList();
+        List<Integer> sorting = Lists.newArrayList(musicianList.keySet());
+        sorting.sort(Ordering.natural().reverse());
+
+        for(Integer count : sorting) {
+            List<Musician> list = musicianList.get(count);
+            if(result.size() + list.size() >= k) {
+                int newCount = k - result.size();
+                for(int i = 0; i < newCount; i++) {
+                    result.add(list.get(i));
+                }
+            } else {
+                result.addAll(list);
+            }
+        }
+        System.out.println(result);
+        return result;
     }
 
     /**

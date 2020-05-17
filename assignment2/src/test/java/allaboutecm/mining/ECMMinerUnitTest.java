@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -158,9 +159,39 @@ class ECMMinerUnitTest {
         assertTrue(musicians.contains(musician1));
     }
 
+    @Test
+    public void mostSocialMusiciansNormalTest() {
+        Musician musician1 = new Musician("Keith Jarrett");
+        Musician musician2 = new Musician("KK Slider");
+        Musician musician3 = new Musician("Alan Walker");
+
+        Album album1 = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        Album album2 = new Album(1976, "ECM 1064/62", "The Köln");
+
+        List<Musician> musicianList1 = new ArrayList<>();
+        List<Musician> musicianList2 = new ArrayList<>();
+
+        musicianList1.add(musician1);
+        musicianList1.add(musician2);
+        musicianList2.add(musician1);
+        musicianList2.add(musician3);
+
+        album1.setFeaturedMusicians(musicianList1);
+        album2.setFeaturedMusicians(musicianList2);
+
+        musician1.setAlbums(Sets.newHashSet(album1, album2));
+        musician2.setAlbums(Sets.newHashSet(album1));
+        musician3.setAlbums(Sets.newHashSet(album2));
+
+        when(dao.loadAll(Musician.class)).thenReturn(Sets.newHashSet(musician1, musician2, musician3));
+        List<Musician> musicians = ecmMiner.mostSocialMusicians(1);
+        assertEquals(1, musicians.size());
+        assertEquals(musicians.get(0), musician1);
+    }
+//=======
     @ParameterizedTest
     @ValueSource(ints = {-1, 0})
-    @DisplayName("K in business year is <= 0")
+    @DisplayName("K in busiest year is <= 0")
     public void KInBusinessIsNegtive(int arg){
         Album album = new Album(1975,"ECM 1064/65", "The Köln Concert");
         Album album1 = new Album(1980,"ECM 1029/66", "Jay Zhou");
@@ -173,7 +204,7 @@ class ECMMinerUnitTest {
 
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3})
-    @DisplayName("K in business year is normal")
+    @DisplayName("K in busiest year is normal")
     public void KInBusinessIsNormal(int arg){
         Album album = new Album(1975,"ECM 1064/65", "The Köln Concert");
         Album album1 = new Album(1980,"ECM 1029/66", "Jay Zhou");
@@ -185,7 +216,7 @@ class ECMMinerUnitTest {
     }
 
     @Test
-    @DisplayName("K in business year is exceed the released years")
+    @DisplayName("K in busiest year is exceed the released years")
     public void KInBusinessIsExceed(){
         Album album = new Album(1975,"ECM 1064/65", "The Köln Concert");
         Album album1 = new Album(1980,"ECM 1029/66", "Jay Zhou");
@@ -195,7 +226,7 @@ class ECMMinerUnitTest {
         List<Integer> busiestYear = ecmMiner.busiestYears(5);
         assertEquals(4,busiestYear.size());
     }
-
+    
     @Test
     public void mostSimilarAlbumsNormalTest(){
         Musician musician1 = new Musician("Keith Jarrett");
@@ -218,5 +249,18 @@ class ECMMinerUnitTest {
         assertTrue(busiestYear.contains(album2));
     }
 
-}
 
+
+    @Test
+    @DisplayName("the multiple busiest year test")
+    public void multipleBusiestYearTest(){
+        Album album = new Album(1980,"ECM 1064/65", "The Köln Concert");
+        Album album1 = new Album(1980,"ECM 1029/66", "Jay Zhou");
+        Album album2 = new Album(1985,"ECM 1033/67", "May Day");
+        Album album3 = new Album(1990,"ECM 1068/68", "I love JJ");
+
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album,album1,album2,album3));
+        List<Integer> albums = ecmMiner.busiestYears(4);
+        assertEquals(3, albums.size());
+    }
+}
