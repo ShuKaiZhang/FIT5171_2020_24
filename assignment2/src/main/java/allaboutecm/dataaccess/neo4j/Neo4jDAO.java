@@ -82,7 +82,7 @@ public class Neo4jDAO implements DAO {
     @Override
     public Musician findMusicianByUrl(URL musicianUrl) {
         Filters filters = new Filters();
-        filters.add(new Filter("Url", EQUALS, musicianUrl));
+        filters.add(new Filter("musicianURL", EQUALS, musicianUrl));
         Collection<Musician> musicians = session.loadAll(Musician.class, filters);
         if (musicians.isEmpty()) {
             return null;
