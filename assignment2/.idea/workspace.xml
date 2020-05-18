@@ -144,11 +144,12 @@
       <workItem from="1589678701925" duration="2381000" />
       <workItem from="1589708894928" duration="11266000" />
       <workItem from="1589765965284" duration="354000" />
+      <workItem from="1589787074243" duration="12000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1054" y="100" width="773" height="847" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589543265004">
@@ -200,10 +201,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589543172834" />
-    <state x="640" y="597" key="com.intellij.ide.util.TipDialog" timestamp="1589708896359">
+    <state x="640" y="597" key="com.intellij.ide.util.TipDialog" timestamp="1589787076163">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="597" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589708896359" />
+    <state x="640" y="597" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589787076163" />
     <state x="511" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1589543094585">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

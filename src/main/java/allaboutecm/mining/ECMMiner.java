@@ -7,6 +7,7 @@ import allaboutecm.model.Musician;
 import allaboutecm.model.MusicianInstrument;
 import com.google.common.collect.*;
 import org.neo4j.cypher.internal.frontend.v3_4.phases.Do;
+import org.neo4j.values.storable.ValueComparator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -254,38 +255,27 @@ public class ECMMiner {
      * @Param k the number of musicians to be returned.
      */
 
-    public List<Musician> mostPopularInstrument(int k) {
-        if(k <= 0) {
+    public List<MusicalInstrument> mostPopularInstrument(int k) {
+        if (k <= 0) {
             return Lists.newArrayList();
         }
         Collection<MusicianInstrument> musicianInstruments = dao.loadAll(MusicianInstrument.class);
-        ListMultimap<Integer, MusicalInstrument> musicianInstrumentListMultimap = MultimapBuilder.treeKeys().arrayListValues().build();
-
-        for(MusicianInstrument musicianInstrument : musicianInstruments) {
-            Set<MusicalInstrument> musicalInstruments = musicianInstrument.getMusicalInstruments();
-            //HashSet<Musician> musicianHashSet = new HashSet<>();
-
-            musicianInstrumentListMultimap.put(musicianInstrument.getMusicalInstruments().size() - 1, );
-        }
-        List<Musician> result = Lists.newArrayList();
-        List<Integer> sorting = Lists.newArrayList(musicianList.keySet());
-        sorting.sort(Ordering.natural().reverse());
-        for(Integer count : sorting) {
-            List<Musician> list = musicianList.get(count);
-            if(result.size() + list.size() >= k) {
-                int newCount = k - result.size();
-                for(int i = 0; i < newCount; i++) {
-                    result.add(list.get(i));
-                }
-            } else {
-                result.addAll(list);
+        ListMultimap<Integer, MusicalInstrument> instrumentMap = MultimapBuilder.treeKeys().arrayListValues().build();
+        for (MusicianInstrument musicianInstrument : musicianInstruments) {
+            for(MusicalInstrument musicalInstrument : musicianInstrument.getMusicalInstruments()) {
+                if(instrumentMap.)
             }
         }
-        if (k>result.size()){
-            k=result.size();
+
+
+        Map<MusicalInstrument, Integer> map = new HashMap<MusicalInstrument, Integer>();
+        for(MusicalInstrument musicalInstrument: instrumentList) {
+            if(map.containsKey(musicalInstrument)) {
+                map.put(musicalInstrument, map.get(musicalInstrument) + 1);
+            } else {
+                map.put(musicalInstrument, 1);
+            }
         }
-        return result;
+        ValueComparator<String, Integer> comparator = new ValueComparator<String, Integer> (map);
     }
-
-
 }
