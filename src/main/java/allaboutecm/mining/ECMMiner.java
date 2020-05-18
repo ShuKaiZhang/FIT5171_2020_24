@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * TODO: implement and test the methods in this class.
@@ -260,22 +261,42 @@ public class ECMMiner {
             return Lists.newArrayList();
         }
         Collection<MusicianInstrument> musicianInstruments = dao.loadAll(MusicianInstrument.class);
-        ListMultimap<Integer, MusicalInstrument> instrumentMap = MultimapBuilder.treeKeys().arrayListValues().build();
+//        ListMultimap<Integer, MusicalInstrument> instrumentMap = MultimapBuilder.treeKeys().arrayListValues().build();
+        List<MusicalInstrument> list = new ArrayList<>();
         for (MusicianInstrument musicianInstrument : musicianInstruments) {
-            for(MusicalInstrument musicalInstrument : musicianInstrument.getMusicalInstruments()) {
-                if(instrumentMap.)
-            }
+            list.addAll(musicianInstrument.getMusicalInstruments());
         }
-
-
-        Map<MusicalInstrument, Integer> map = new HashMap<MusicalInstrument, Integer>();
-        for(MusicalInstrument musicalInstrument: instrumentList) {
-            if(map.containsKey(musicalInstrument)) {
-                map.put(musicalInstrument, map.get(musicalInstrument) + 1);
+        Map<MusicalInstrument, Integer> results = new LinkedHashMap<MusicalInstrument, Integer>();
+        for (MusicalInstrument s : list) {
+            if (results.get(s) != null) {
+                results.put(s, results.get(s) + 1);
             } else {
-                map.put(musicalInstrument, 1);
+                results.put(s, 1);
             }
         }
-        ValueComparator<String, Integer> comparator = new ValueComparator<String, Integer> (map);
+
+        ListMultimap<Integer, MusicalInstrument> newMap = MultimapBuilder.treeKeys().arrayListValues().build();
+        for(Map.Entry<MusicalInstrument, Integer> entry : results.entrySet()){
+            MusicalInstrument key = entry.getKey();
+            Integer values = entry.getValue();
+            newMap.put(values, key);
+        }
+
+        List<MusicalInstrument> result = Lists.newArrayList();
+        List<Integer> sortedKeys = Lists.newArrayList(newMap.keySet());
+        sortedKeys.sort(Ordering.natural().reverse());
+        for (Integer count : sortedKeys) {
+            List<MusicalInstrument> l = newMap.get(count);
+
+            if (result.size() + l.size() >= k) {
+                int newAddition = k - result.size();
+                for (int i = 0; i < newAddition; i++) {
+                    result.add(l.get(i));
+                }
+            } else {
+                result.addAll(l);
+            }
+        }
+        return result;
     }
 }

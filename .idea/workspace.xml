@@ -13,7 +13,6 @@
   <component name="ProjectId" id="1aQJnp7LLgqBLWhui7SGtZM7gvu" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -22,7 +21,37 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Assignment1" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ECMMinerIntegrationTest">
+    <configuration name="ECMMinerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fit5171-2020-XX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="allaboutecm.mining.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="allaboutecm.mining" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ECMMinerUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fit5171-2020-XX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="allaboutecm.mining.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="allaboutecm.mining" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ECMMinerUnitTest.mostSocialMusiciansOnlyReturnOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
@@ -41,6 +70,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ECMMinerIntegrationTest" />
+        <item itemvalue="JUnit.ECMMinerUnitTest" />
         <item itemvalue="JUnit.ECMMinerUnitTest.mostSocialMusiciansOnlyReturnOne" />
       </list>
     </recent_temporary>
@@ -70,13 +101,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586662056688">
