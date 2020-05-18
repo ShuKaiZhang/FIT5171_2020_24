@@ -2,6 +2,7 @@ package allaboutecm.mining;
 
 import allaboutecm.dataaccess.DAO;
 import allaboutecm.model.Album;
+import allaboutecm.model.MusicalInstrument;
 import allaboutecm.model.Musician;
 import allaboutecm.model.MusicianInstrument;
 import com.google.common.collect.*;
@@ -245,5 +246,46 @@ public class ECMMiner {
         }
         return result;
     }
+
+    /**
+     * Extra Credit
+     * The most popular musical instrument
+     *
+     * @Param k the number of musicians to be returned.
+     */
+
+    public List<Musician> mostPopularInstrument(int k) {
+        if(k <= 0) {
+            return Lists.newArrayList();
+        }
+        Collection<MusicianInstrument> musicianInstruments = dao.loadAll(MusicianInstrument.class);
+        ListMultimap<Integer, MusicalInstrument> musicianInstrumentListMultimap = MultimapBuilder.treeKeys().arrayListValues().build();
+
+        for(MusicianInstrument musicianInstrument : musicianInstruments) {
+            Set<MusicalInstrument> musicalInstruments = musicianInstrument.getMusicalInstruments();
+            //HashSet<Musician> musicianHashSet = new HashSet<>();
+
+            musicianInstrumentListMultimap.put(musicianInstrument.getMusicalInstruments().size() - 1, );
+        }
+        List<Musician> result = Lists.newArrayList();
+        List<Integer> sorting = Lists.newArrayList(musicianList.keySet());
+        sorting.sort(Ordering.natural().reverse());
+        for(Integer count : sorting) {
+            List<Musician> list = musicianList.get(count);
+            if(result.size() + list.size() >= k) {
+                int newCount = k - result.size();
+                for(int i = 0; i < newCount; i++) {
+                    result.add(list.get(i));
+                }
+            } else {
+                result.addAll(list);
+            }
+        }
+        if (k>result.size()){
+            k=result.size();
+        }
+        return result;
+    }
+
 
 }
