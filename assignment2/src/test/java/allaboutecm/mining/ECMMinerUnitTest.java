@@ -251,6 +251,69 @@ class ECMMinerUnitTest {
         assertEquals(1, musicians.size());
         assertEquals(musicians.get(0), musician1);
     }
+
+    @Test
+    public void mostSocialMusiciansKMoreThanList() {
+        Musician musician1 = new Musician("Keith Jarrett");
+        Musician musician2 = new Musician("KK Slider");
+        Musician musician3 = new Musician("Alan Walker");
+
+        Album album1 = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        Album album2 = new Album(1976, "ECM 1064/62", "The Köln");
+
+        List<Musician> musicianList1 = new ArrayList<>();
+        List<Musician> musicianList2 = new ArrayList<>();
+
+        musicianList1.add(musician1);
+        musicianList1.add(musician2);
+        musicianList2.add(musician1);
+        musicianList2.add(musician3);
+
+        album1.setFeaturedMusicians(musicianList1);
+        album2.setFeaturedMusicians(musicianList2);
+
+        musician1.setAlbums(Sets.newHashSet(album1, album2));
+        musician2.setAlbums(Sets.newHashSet(album1));
+        musician3.setAlbums(Sets.newHashSet(album2));
+
+        when(dao.loadAll(Musician.class)).thenReturn(Sets.newHashSet(musician1, musician2, musician3));
+        List<Musician> musicians = ecmMiner.mostSocialMusicians(10);
+        assertEquals(3, musicians.size());
+        assertEquals(musicians.get(0), musician1);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {-20, -1, 0})
+    public void mostSocialMusiciansReturnEmptyWhenKInvalid(int k) {
+        Musician musician1 = new Musician("Keith Jarrett");
+        Musician musician2 = new Musician("KK Slider");
+        Musician musician3 = new Musician("Alan Walker");
+
+        Album album1 = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        Album album2 = new Album(1976, "ECM 1064/62", "The Köln");
+
+        List<Musician> musicianList1 = new ArrayList<>();
+        List<Musician> musicianList2 = new ArrayList<>();
+
+        musicianList1.add(musician1);
+        musicianList1.add(musician2);
+        musicianList2.add(musician1);
+        musicianList2.add(musician3);
+
+        album1.setFeaturedMusicians(musicianList1);
+        album2.setFeaturedMusicians(musicianList2);
+
+        musician1.setAlbums(Sets.newHashSet(album1, album2));
+        musician2.setAlbums(Sets.newHashSet(album1));
+        musician3.setAlbums(Sets.newHashSet(album2));
+
+        when(dao.loadAll(Musician.class)).thenReturn(Sets.newHashSet(musician1, musician2, musician3));
+
+        List<Musician> musicians = ecmMiner.mostSocialMusicians(k);
+        assertEquals(0, musicians.size());
+    }
+
+
 //=======
     @ParameterizedTest
     @ValueSource(ints = {-1, 0})
