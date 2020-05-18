@@ -211,7 +211,6 @@ public class ECMMiner {
      * @Param k the number of albums to be returned.
      * @Param album
      */
-
     
     public List<Album> mostSimilarAlbums(int k, Album album) {
         if(k <= 0) {
