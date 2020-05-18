@@ -216,7 +216,6 @@ public class ECMMiner {
         if(k <= 0) {
             return Lists.newArrayList();
         }
-        int count = k;
         Collection<Album> albums = dao.loadAll(Album.class);
         List<Album> list = new ArrayList<>(albums);
         List<Musician> musician = album.getFeaturedMusicians();
@@ -244,7 +243,6 @@ public class ECMMiner {
                 result.addAll(a);
             }
         }
-
         return result;
     }
 

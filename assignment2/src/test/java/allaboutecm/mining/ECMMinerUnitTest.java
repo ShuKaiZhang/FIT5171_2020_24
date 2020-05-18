@@ -160,6 +160,69 @@ class ECMMinerUnitTest {
     }
 
     @Test
+    public void mostTalentedMusiciansSameValue() {
+
+        Musician musician1 = new Musician("Keith Jarrett");
+        MusicianInstrument musicianInstrument1 = new MusicianInstrument(musician1,Sets.newHashSet(
+                new MusicalInstrument("Guitar")));
+
+
+
+        Musician musician2 = new Musician("Keith Jt");
+        MusicianInstrument musicianInstrument2 = new MusicianInstrument(musician2,Sets.newHashSet(
+                new MusicalInstrument("Piano")));
+
+
+        when(dao.loadAll(MusicianInstrument.class)).thenReturn(Sets.newHashSet(musicianInstrument1,musicianInstrument2));
+        List<Musician> musicians = ecmMiner.mostTalentedMusicians(1);
+
+        assertEquals(1, musicians.size());
+        assertTrue(musicians.contains(musician1)||musicians.contains(musician2));
+    }
+
+    @Test
+    public void mostTalentedMusiciansLessThanK() {
+
+        Musician musician1 = new Musician("Keith Jarrett");
+        MusicianInstrument musicianInstrument1 = new MusicianInstrument(musician1,Sets.newHashSet(
+                new MusicalInstrument("Guitar")));
+
+
+
+        Musician musician2 = new Musician("Keith Jt");
+        MusicianInstrument musicianInstrument2 = new MusicianInstrument(musician2,Sets.newHashSet(
+                new MusicalInstrument("Piano")));
+
+
+        when(dao.loadAll(MusicianInstrument.class)).thenReturn(Sets.newHashSet(musicianInstrument1,musicianInstrument2));
+        List<Musician> musicians = ecmMiner.mostTalentedMusicians(5);
+
+        assertEquals(2, musicians.size());
+        assertTrue(musicians.contains(musician1)||musicians.contains(musician2));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {-20, -1, 0})
+    public void mostTalentedMusiciansInvalidK(int arg) {
+
+        Musician musician1 = new Musician("Keith Jarrett");
+        MusicianInstrument musicianInstrument1 = new MusicianInstrument(musician1,Sets.newHashSet(
+                new MusicalInstrument("Piano"),new MusicalInstrument("Guitar")));
+
+
+
+        Musician musician2 = new Musician("Keith Jt");
+        MusicianInstrument musicianInstrument2 = new MusicianInstrument(musician2,Sets.newHashSet(
+                new MusicalInstrument("Piano")));
+
+
+        when(dao.loadAll(MusicianInstrument.class)).thenReturn(Sets.newHashSet(musicianInstrument1,musicianInstrument2));
+        List<Musician> musicians = ecmMiner.mostTalentedMusicians(arg);
+
+        assertEquals(0, musicians.size());
+    }
+
+    @Test
     public void mostSocialMusiciansNormalTest() {
         Musician musician1 = new Musician("Keith Jarrett");
         Musician musician2 = new Musician("KK Slider");
@@ -289,7 +352,7 @@ class ECMMinerUnitTest {
         List<Integer> busiestYear = ecmMiner.busiestYears(5);
         assertEquals(4,busiestYear.size());
     }
-    
+
     @Test
     public void mostSimilarAlbumsNormalTest(){
         Musician musician1 = new Musician("Keith Jarrett");
@@ -308,11 +371,68 @@ class ECMMinerUnitTest {
         when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album2,album3));
         List<Album> busiestYear = ecmMiner.mostSimilarAlbums(1,album1);
         assertEquals(1,busiestYear.size());
-        System.out.println(busiestYear.size());
         assertTrue(busiestYear.contains(album2));
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = {-20, -1, 0})
+    public void mostSimilarAlbumsInvalidK(int arg){
+        Musician musician1 = new Musician("Keith Jarrett");
+        Musician musician2 = new Musician("Keith k");
+        Musician musician3 = new Musician("Keith J");
 
+        Album album1 = new Album(1980,"ECM 1029/66", "Jay Zhou");
+        album1.setFeaturedMusicians(Lists.newArrayList(musician1,musician2));
+
+        Album album2 = new Album(1985,"ECM 1033/67", "May Day");
+        album2.setFeaturedMusicians(Lists.newArrayList(musician1,musician2,musician3));
+
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album2));
+        List<Album> busiestYear = ecmMiner.mostSimilarAlbums(arg,album1);
+        assertEquals(0,busiestYear.size());
+    }
+
+    @Test
+    public void mostSimilarAlbumsSameValue(){
+        Musician musician1 = new Musician("Keith Jarrett");
+        Musician musician2 = new Musician("Keith k");
+        Musician musician3 = new Musician("Keith J");
+
+        Album album1 = new Album(1980,"ECM 1029/66", "Jay Zhou");
+        album1.setFeaturedMusicians(Lists.newArrayList(musician1,musician2));
+
+        Album album2 = new Album(1985,"ECM 1033/67", "May Day");
+        album2.setFeaturedMusicians(Lists.newArrayList(musician1,musician3));
+
+        Album album3 = new Album(1990,"ECM 1068/68", "I love JJ");
+        album3.setFeaturedMusicians(Lists.newArrayList(musician3,musician2));
+
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album2,album3));
+        List<Album> busiestYear = ecmMiner.mostSimilarAlbums(1,album1);
+        assertEquals(1,busiestYear.size());
+        assertTrue(busiestYear.contains(album2)||busiestYear.contains(album3));
+    }
+
+    @Test
+    public void mostSimilarAlbumsLessThanK(){
+        Musician musician1 = new Musician("Keith Jarrett");
+        Musician musician2 = new Musician("Keith k");
+        Musician musician3 = new Musician("Keith J");
+
+        Album album1 = new Album(1980,"ECM 1029/66", "Jay Zhou");
+        album1.setFeaturedMusicians(Lists.newArrayList(musician1,musician2));
+
+        Album album2 = new Album(1985,"ECM 1033/67", "May Day");
+        album2.setFeaturedMusicians(Lists.newArrayList(musician1,musician3));
+
+        Album album3 = new Album(1990,"ECM 1068/68", "I love JJ");
+        album3.setFeaturedMusicians(Lists.newArrayList(musician3,musician2));
+
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album2,album3));
+        List<Album> busiestYear = ecmMiner.mostSimilarAlbums(5,album1);
+        assertEquals(2,busiestYear.size());
+        assertTrue(busiestYear.contains(album2)&&busiestYear.contains(album3));
+    }
 
     @Test
     @DisplayName("the multiple busiest year test")
