@@ -1,5 +1,6 @@
 package allaboutecm.dataaccess;
 
+import allaboutecm.model.Album;
 import allaboutecm.model.Entity;
 import allaboutecm.model.Musician;
 
@@ -17,7 +18,6 @@ public interface DAO {
 
     Musician findMusicianByName(String name);
 
-    Musician findMusicianByUrl(URL musicianUrl);
+    Album findAlbumByName(String name);
 
-    Musician findMusicianByBiography(String biography);
 }

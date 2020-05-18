@@ -79,30 +79,18 @@ public class Neo4jDAO implements DAO {
             return musicians.iterator().next();
         }
     }
-
     @Override
-    public Musician findMusicianByUrl(URL musicianUrl) {
+    public Album findAlbumByName(String name) {
         Filters filters = new Filters();
-        filters.add(new Filter("musicianURL", EQUALS, musicianUrl));
-        Collection<Musician> musicians = session.loadAll(Musician.class, filters);
-        if (musicians.isEmpty()) {
+        filters.add(new Filter("albumName", EQUALS, name));
+        Collection<Album> albums = session.loadAll(Album.class, filters);
+        if (albums.isEmpty()) {
             return null;
         } else {
-            return musicians.iterator().next();
+            return albums.iterator().next();
         }
     }
 
-    @Override
-    public Musician findMusicianByBiography(String biography) {
-        Filters filters = new Filters();
-        filters.add(new Filter("biography", EQUALS, biography));
-        Collection<Musician> musicians = session.loadAll(Musician.class, filters);
-        if (musicians.isEmpty()) {
-            return null;
-        } else {
-            return musicians.iterator().next();
-        }
-    }
 
     private <T extends Entity> T findExistingEntity(Entity entity, Class clazz) {
         Filters filters = new Filters();

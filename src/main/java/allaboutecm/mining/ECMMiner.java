@@ -35,7 +35,7 @@ public class ECMMiner {
      * When startYear/endYear is negative, that means startYear/endYear is ignored.
      */
     public List<Musician> mostProlificMusicians(int k, int startYear, int endYear) {
-        if(startYear < 1900 || endYear <1900 || startYear > Calendar.getInstance().get(Calendar.YEAR) || endYear > Calendar.getInstance().get(Calendar.YEAR)||k <= 0) {
+        if (startYear < 1900 || endYear < 1900 || startYear > Calendar.getInstance().get(Calendar.YEAR) || endYear > Calendar.getInstance().get(Calendar.YEAR) || k <= 0) {
             return Lists.newArrayList();
         }
         Collection<Musician> musicians = dao.loadAll(Musician.class);
@@ -72,10 +72,7 @@ public class ECMMiner {
         sortedKeys.sort(Ordering.natural().reverse());
         for (Integer count : sortedKeys) {
             List<Musician> list = countMap.get(count);
-//            if (list.size() >= k) {
-//                break;
-//            }
-//            ??????????????
+
             if (result.size() + list.size() >= k) {
                 int newAddition = k - result.size();
                 for (int i = 0; i < newAddition; i++) {
@@ -95,7 +92,7 @@ public class ECMMiner {
      * @Param k the number of musicians to be returned.
      */
     public List<Musician> mostTalentedMusicians(int k) {
-        if(k <= 0) {
+        if (k <= 0) {
             return Lists.newArrayList();
         }
         int count = k;
@@ -108,12 +105,12 @@ public class ECMMiner {
             }
         });
         List<Musician> result = Lists.newArrayList();
-        if (count>list.size()){
-            count=list.size();
+        if (count > list.size()) {
+            count = list.size();
         }
         List<MusicianInstrument> selected = list.subList(0, count);
 
-        for (MusicianInstrument m:selected){
+        for (MusicianInstrument m : selected) {
             result.add(m.getMusician());
         }
         return result;
@@ -126,17 +123,17 @@ public class ECMMiner {
      */
 
     public List<Musician> mostSocialMusicians(int k) {
-        if(k <= 0) {
+        if (k <= 0) {
             return Lists.newArrayList();
         }
         Collection<Musician> musicians = dao.loadAll(Musician.class);
         ListMultimap<Integer, Musician> musicianList = MultimapBuilder.treeKeys().arrayListValues().build();
         //Collections.sort(list, (o1, o2) -> o2.getFeaturedMusicians().size() - o1.getFeaturedMusicians().size());
 
-        for(Musician m : musicians) {
+        for (Musician m : musicians) {
             Set<Album> albums = m.getAlbums();
             HashSet<Musician> musicianHashSet = new HashSet<>();
-            for(Album a : albums) {
+            for (Album a : albums) {
                 List<Musician> AlbumOfMusician = a.getFeaturedMusicians();
                 musicianHashSet.addAll(Sets.newHashSet(AlbumOfMusician));
             }
@@ -145,19 +142,19 @@ public class ECMMiner {
         List<Musician> result = Lists.newArrayList();
         List<Integer> sorting = Lists.newArrayList(musicianList.keySet());
         sorting.sort(Ordering.natural().reverse());
-        for(Integer count : sorting) {
+        for (Integer count : sorting) {
             List<Musician> list = musicianList.get(count);
-            if(result.size() + list.size() >= k) {
+            if (result.size() + list.size() >= k) {
                 int newCount = k - result.size();
-                for(int i = 0; i < newCount; i++) {
+                for (int i = 0; i < newCount; i++) {
                     result.add(list.get(i));
                 }
             } else {
                 result.addAll(list);
             }
         }
-        if (k>result.size()){
-            k=result.size();
+        if (k > result.size()) {
+            k = result.size();
         }
         return result;
     }
@@ -169,31 +166,31 @@ public class ECMMiner {
      */
 
     public List<Integer> busiestYears(int k) {
-        if (k > 0){
+        if (k > 0) {
             Collection<Album> albums = dao.loadAll(Album.class);
             ListMultimap<Integer, Album> albumMap = MultimapBuilder.treeKeys().arrayListValues().build();
             ListMultimap<Integer, Integer> countMap = MultimapBuilder.treeKeys().arrayListValues().build();
-            for (Album a: albums){
+            for (Album a : albums) {
                 int year = a.getReleaseYear();
-                albumMap.put(year,a);
+                albumMap.put(year, a);
             }
 
             for (Integer i : albumMap.keySet()) {
                 int totalAlbum = albumMap.get(i).size();
-                countMap.put(totalAlbum,i);
+                countMap.put(totalAlbum, i);
             }
 
             List<Integer> result = Lists.newArrayList();
             List<Integer> sortedKeys = Lists.newArrayList(countMap.keySet());
             sortedKeys.sort(Ordering.natural().reverse());
-            for (Integer count: sortedKeys) {
+            for (Integer count : sortedKeys) {
                 List<Integer> list = countMap.get(count);
                 if (result.size() + list.size() >= k) {
                     int remain = k - result.size();
                     for (int i = 0; i < remain; i++) {
                         result.add(list.get(i));
                     }
-                }else {
+                } else {
                     result.addAll(list);
                 }
             }
@@ -214,9 +211,9 @@ public class ECMMiner {
      * @Param k the number of albums to be returned.
      * @Param album
      */
-    
+
     public List<Album> mostSimilarAlbums(int k, Album album) {
-        if(k <= 0) {
+        if (k <= 0) {
             return Lists.newArrayList();
         }
         Collection<Album> albums = dao.loadAll(Album.class);
@@ -225,12 +222,12 @@ public class ECMMiner {
         ListMultimap<Double, Album> map = MultimapBuilder.treeKeys().arrayListValues().build();
         for (Album a : list) {
             double same = 0;
-            for (Musician m:musician){
+            for (Musician m : musician) {
                 if (a.getFeaturedMusicians().contains(m)) {
                     same++;
                 }
             }
-            map.put(same/musician.size(), a);
+            map.put(same / musician.size(), a);
         }
         List<Album> result = Lists.newArrayList();
         List<Double> sortedKeys = Lists.newArrayList(map.keySet());
@@ -276,7 +273,7 @@ public class ECMMiner {
         }
 
         ListMultimap<Integer, MusicalInstrument> newMap = MultimapBuilder.treeKeys().arrayListValues().build();
-        for(Map.Entry<MusicalInstrument, Integer> entry : results.entrySet()){
+        for (Map.Entry<MusicalInstrument, Integer> entry : results.entrySet()) {
             MusicalInstrument key = entry.getKey();
             Integer values = entry.getValue();
             newMap.put(values, key);
