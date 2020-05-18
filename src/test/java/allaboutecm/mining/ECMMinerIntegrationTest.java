@@ -181,4 +181,22 @@ class ECMMinerIntegrationTest {
         assertEquals(1,busiestYear.size());
         assertTrue(busiestYear.contains(album2));
     }
+
+    @Test
+    public void mostPopularInstrumentNormalTest() {
+        Musician musician1 = new Musician("Keith Jarrett");
+        MusicianInstrument musicianInstrument1 = new MusicianInstrument(musician1,Sets.newHashSet(
+                new MusicalInstrument("Piano"),new MusicalInstrument("Guitar")));
+
+        Musician musician2 = new Musician("Keith Jt");
+        MusicianInstrument musicianInstrument2 = new MusicianInstrument(musician2,Sets.newHashSet(
+                new MusicalInstrument("Piano")));
+
+        dao.createOrUpdate(musicianInstrument1);
+        dao.createOrUpdate(musicianInstrument2);
+
+        List<MusicalInstrument> mostPopularInstrument = ecmMiner.mostPopularInstrument(1);
+        assertEquals(1, mostPopularInstrument.size());
+        assertEquals(mostPopularInstrument.get(0), new MusicalInstrument("Piano"));
+    }
 }

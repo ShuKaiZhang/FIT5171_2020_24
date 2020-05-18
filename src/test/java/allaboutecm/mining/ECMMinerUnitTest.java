@@ -446,4 +446,67 @@ class ECMMinerUnitTest {
         List<Integer> albums = ecmMiner.busiestYears(4);
         assertEquals(3, albums.size());
     }
+
+
+    @Test
+    public void mostPopularInstrumentNormalTest() {
+        Musician musician1 = new Musician("Keith Jarrett");
+        MusicianInstrument musicianInstrument1 = new MusicianInstrument(musician1,Sets.newHashSet(
+                new MusicalInstrument("Piano"),new MusicalInstrument("Guitar")));
+
+        Musician musician2 = new Musician("Keith Jt");
+        MusicianInstrument musicianInstrument2 = new MusicianInstrument(musician2,Sets.newHashSet(
+                new MusicalInstrument("Piano")));
+
+        when(dao.loadAll(MusicianInstrument.class)).thenReturn(Sets.newHashSet(musicianInstrument1, musicianInstrument2));
+        List<MusicalInstrument> mostPopularInstrument = ecmMiner.mostPopularInstrument(1);
+        assertEquals(1, mostPopularInstrument.size());
+        assertEquals(mostPopularInstrument.get(0), new MusicalInstrument("Piano"));
+    }
+
+    @Test
+    public void mostPopularInstrumentKMoreThanList() {
+        Musician musician1 = new Musician("Keith Jarrett");
+        MusicianInstrument musicianInstrument1 = new MusicianInstrument(musician1,Sets.newHashSet(
+                new MusicalInstrument("Piano"),new MusicalInstrument("Guitar")));
+
+        Musician musician2 = new Musician("Keith Jt");
+        MusicianInstrument musicianInstrument2 = new MusicianInstrument(musician2,Sets.newHashSet(
+                new MusicalInstrument("Piano")));
+
+        when(dao.loadAll(MusicianInstrument.class)).thenReturn(Sets.newHashSet(musicianInstrument1, musicianInstrument2));
+        List<MusicalInstrument> mostPopularInstrument = ecmMiner.mostPopularInstrument(5);
+        assertEquals(2, mostPopularInstrument.size());
+    }
+
+    @Test
+    public void mostPopularInstrumentSameValue() {
+        Musician musician1 = new Musician("Keith Jarrett");
+        MusicianInstrument musicianInstrument1 = new MusicianInstrument(musician1,Sets.newHashSet(
+                new MusicalInstrument("Guitar")));
+
+        Musician musician2 = new Musician("Keith Jt");
+        MusicianInstrument musicianInstrument2 = new MusicianInstrument(musician2,Sets.newHashSet(
+                new MusicalInstrument("Piano")));
+
+        when(dao.loadAll(MusicianInstrument.class)).thenReturn(Sets.newHashSet(musicianInstrument1, musicianInstrument2));
+        List<MusicalInstrument> mostPopularInstrument = ecmMiner.mostPopularInstrument(1);
+        assertEquals(1, mostPopularInstrument.size());
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {-20, -1, 0})
+    public void mostPopularInstrumentReturnEmptyWhenKInvalid(int k) {
+        Musician musician1 = new Musician("Keith Jarrett");
+        MusicianInstrument musicianInstrument1 = new MusicianInstrument(musician1,Sets.newHashSet(
+                new MusicalInstrument("Piano"),new MusicalInstrument("Guitar")));
+
+        Musician musician2 = new Musician("Keith Jt");
+        MusicianInstrument musicianInstrument2 = new MusicianInstrument(musician2,Sets.newHashSet(
+                new MusicalInstrument("Piano")));
+
+        when(dao.loadAll(MusicianInstrument.class)).thenReturn(Sets.newHashSet(musicianInstrument1, musicianInstrument2));
+        List<MusicalInstrument> mostPopularInstrument = ecmMiner.mostPopularInstrument(k);
+        assertEquals(0, mostPopularInstrument.size());
+    }
 }
