@@ -313,6 +313,37 @@ class ECMMinerUnitTest {
         assertEquals(0, musicians.size());
     }
 
+    @Test
+    public void mostSocialMusiciansOnlyReturnOneWhenHaveTheSameNumber() {
+        Musician musician1 = new Musician("Keith Jarrett");
+        Musician musician2 = new Musician("KK Slider");
+        //Musician musician3 = new Musician("Alan Walker");
+
+        Album album1 = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        Album album2 = new Album(1976, "ECM 1064/62", "The Köln");
+
+        List<Musician> musicianList1 = new ArrayList<>();
+        List<Musician> musicianList2 = new ArrayList<>();
+
+        musicianList1.add(musician1);
+        musicianList1.add(musician2);
+        musicianList2.add(musician1);
+        musicianList2.add(musician2);
+
+        album1.setFeaturedMusicians(musicianList1);
+        album2.setFeaturedMusicians(musicianList2);
+
+        musician1.setAlbums(Sets.newHashSet(album1, album2));
+        musician2.setAlbums(Sets.newHashSet(album1, album2));
+
+        when(dao.loadAll(Musician.class)).thenReturn(Sets.newHashSet(musician1, musician2));
+        List<Musician> musicians = ecmMiner.mostSocialMusicians(1);
+        assertEquals(1, musicians.size());
+        assertTrue(musicians.contains(musician1)||musicians.contains(musician2));
+    }
+
+
+
 
 //=======
     @ParameterizedTest
