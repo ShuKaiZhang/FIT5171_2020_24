@@ -212,6 +212,7 @@ public class ECMMiner {
      * @Param album
      */
 
+    
     public List<Album> mostSimilarAlbums(int k, Album album) {
         if(k <= 0) {
             return Lists.newArrayList();
