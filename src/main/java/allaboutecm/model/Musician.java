@@ -47,7 +47,7 @@ public class Musician extends Entity {
 
 
         if (!name.trim().contains(" ")){
-            throw new IllegalArgumentException("The albums cannot be blank!");
+            throw new IllegalArgumentException("The musician name format is invalid!");
         }else {
             this.name = name;
             this.musicianUrl = null;
@@ -60,6 +60,16 @@ public class Musician extends Entity {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name){
+        notNull(name);
+        notBlank(name);
+        if (!name.trim().contains(" ")){
+            throw new IllegalArgumentException("The musician name format is invalid!");
+        }else {
+            this.name = name;
+        }
     }
 
     public Set<Album> getAlbums() {

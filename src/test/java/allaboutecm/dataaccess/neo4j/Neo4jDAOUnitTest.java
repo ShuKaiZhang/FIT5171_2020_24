@@ -208,4 +208,212 @@ class Neo4jDAOUnitTest {
         assertEquals(album, returnedAlbum, "Nothing found");
     }
 
+    //other teams code.
+    @Test
+    public void successfuldeleteMusician() throws MalformedURLException {
+        assertEquals(0, dao.loadAll(Musician.class).size());
+
+        Musician musician = new Musician("Keith Jarrett");
+        musician.setMusicianUrl(new URL("https://www.keithjarrett.org/"));
+
+        dao.createOrUpdate(musician);
+        Musician loadedMusician = dao.load(Musician.class, musician.getId());
+
+        assertNotNull(loadedMusician.getId());
+        assertEquals(musician, loadedMusician);
+        assertEquals(musician.getMusicianUrl(), loadedMusician.getMusicianUrl());
+
+        assertEquals(1, dao.loadAll(Musician.class).size());
+
+        dao.delete(musician);
+        assertEquals(0,dao.loadAll(Musician.class).size());
+    }
+
+    @Test
+    public void successfulCreationAndLoadingOfAlbum() throws MalformedURLException {
+        assertEquals(0, dao.loadAll(Album.class).size());
+
+        Album album = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        dao.createOrUpdate(album);
+        Album loadedAlbum = dao.load(Album.class, album.getId());
+        assertNotNull(loadedAlbum.getId());
+        assertEquals(album, loadedAlbum);
+        assertEquals(1, dao.loadAll(Album.class).size());
+
+//        dao.delete(album);
+//        assertEquals(0, dao.loadAll(Album.class).size());
+    }
+
+    @Test
+    public void successfulUpdateOfAlbum() throws MalformedURLException {
+        assertEquals(0, dao.loadAll(Album.class).size());
+
+        Album album = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        dao.createOrUpdate(album);
+
+        album.setReleaseYear(1974);
+
+        dao.createOrUpdate(album);
+        Album loadedAlbum = dao.load(Album.class, album.getId());
+        assertNotNull(loadedAlbum.getId());
+        assertEquals(loadedAlbum.getReleaseYear(), 1974);
+
+        assertEquals(1, dao.loadAll(Album.class).size());
+
+        dao.delete(album);
+        assertEquals(0, dao.loadAll(Album.class).size());
+    }
+
+    @Test
+    public void successfulDeleteAlbum() throws MalformedURLException {
+        assertEquals(0, dao.loadAll(Album.class).size());
+
+        Album album = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        dao.createOrUpdate(album);
+        Album loadedAlbum = dao.load(Album.class, album.getId());
+        assertNotNull(loadedAlbum.getId());
+        assertEquals(album, loadedAlbum);
+        assertEquals(1, dao.loadAll(Album.class).size());
+
+//        dao.delete(album);
+//        assertEquals(0, dao.loadAll(Album.class).size());
+    }
+
+    @Test
+    public void successfulCreationAndLoadingOfMusicalInstrument() throws MalformedURLException {
+        assertEquals(0, dao.loadAll(MusicalInstrument.class).size());
+
+        MusicalInstrument musicalInstrument = new MusicalInstrument("piano");
+        dao.createOrUpdate(musicalInstrument);
+        MusicalInstrument loadedMusIn = dao.load(MusicalInstrument.class, musicalInstrument.getId());
+        assertNotNull(loadedMusIn.getId());
+        assertEquals(musicalInstrument, loadedMusIn);
+        assertEquals(1, dao.loadAll(MusicalInstrument.class).size());
+
+//        dao.delete(musicalInstrument);
+//        assertEquals(0, dao.loadAll(MusicalInstrument.class).size());
+    }
+
+    @Test
+    public void successfulCreationAndLoadingOfMusicianInstrument() throws MalformedURLException {
+        assertEquals(0, dao.loadAll(MusicianInstrument.class).size());
+
+        MusicianInstrument musician = new MusicianInstrument();
+        dao.createOrUpdate(musician);
+        MusicianInstrument loadedMuscanIn = dao.load(MusicianInstrument.class, musician.getId());
+        assertNotNull(loadedMuscanIn.getId());
+        assertEquals(musician, loadedMuscanIn);
+        assertEquals(1, dao.loadAll(MusicianInstrument.class).size());
+
+//        dao.delete(musician);
+//        assertEquals(0, dao.loadAll(MusicalInstrument.class).size());
+
+
+    }
+
+    @Test
+    public void successfulCreationOfMusicianInstrumentAndMuscialInstrument() throws MalformedURLException {
+        MusicalInstrument musicalInstrument = new MusicalInstrument("violin");
+
+
+        MusicianInstrument musicianInstrument = new MusicianInstrument();
+        musicianInstrument.setMusicalInstruments(Sets.newHashSet(musicalInstrument));
+
+        dao.createOrUpdate(musicalInstrument);
+        dao.createOrUpdate(musicianInstrument);
+
+        Collection<MusicianInstrument> musicians = dao.loadAll(MusicianInstrument.class);
+        assertEquals(1, musicians.size());
+        MusicianInstrument loadedMusicianIn = musicians.iterator().next();
+        assertEquals(musicianInstrument, loadedMusicianIn);
+
+        assertEquals(musicianInstrument.getMusicalInstruments(), loadedMusicianIn.getMusicalInstruments());
+
+//        dao.delete(musicalInstrument);
+//        assertEquals(0, dao.loadAll(MusicalInstrument.class).size());
+//        dao.delete(musicianInstrument);
+//        assertEquals(0, dao.loadAll(MusicianInstrument.class).size());
+    }
+    @Test
+    public void successfulCreationOfMusicianInstrumentAndMusician() throws MalformedURLException {
+
+
+        Musician musician = new Musician("Keith Jarrett");
+        musician.setMusicianUrl(new URL("https://www.keithjarrett.org/"));
+        MusicianInstrument musicianInstrument = new MusicianInstrument();
+        musicianInstrument.setMusician(musician);
+        dao.createOrUpdate(musician);
+        dao.createOrUpdate(musicianInstrument);
+
+        Collection<MusicianInstrument> musicians = dao.loadAll(MusicianInstrument.class);
+        assertEquals(1, musicians.size());
+        MusicianInstrument loadedMusicianIn = musicians.iterator().next();
+        assertEquals(musicianInstrument, loadedMusicianIn);
+        assertEquals(musicianInstrument.getMusician(), loadedMusicianIn.getMusician());
+
+//        dao.delete(musician);
+//        assertEquals(0, dao.loadAll(Musician.class).size());
+//        dao.delete(musicianInstrument);
+//        assertEquals(0, dao.loadAll(MusicianInstrument.class).size());
+    }
+    @Test
+    public void successfulCreationOfMusicianInstrumentAndAlbum() throws MalformedURLException {
+        Album album = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        MusicianInstrument musicianInstrument = new MusicianInstrument();
+        album.setInstruments(Sets.newHashSet(musicianInstrument));
+        dao.createOrUpdate(album);
+        dao.createOrUpdate(musicianInstrument);
+        Collection<Album> albums = dao.loadAll(Album.class);
+        assertEquals(1, albums.size());
+        Album loadedAlbum = albums.iterator().next();
+        assertEquals(album, loadedAlbum);
+        assertEquals(album.getInstruments(), loadedAlbum.getInstruments());
+
+//        dao.delete(musicianInstrument);
+//        assertEquals(0, dao.loadAll(MusicianInstrument.class).size());
+//        dao.delete(album);
+//        assertEquals(0, dao.loadAll(Album.class).size());
+    }
+    @Test
+    public void successfulCreationOfAll() throws MalformedURLException
+    {
+        Album album = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        MusicianInstrument musicianInstrument = new MusicianInstrument();
+        Musician musician = new Musician("Keith Jarrett");
+        MusicalInstrument musicalInstrument = new MusicalInstrument("violin");
+
+        album.setInstruments(Sets.newHashSet(musicianInstrument));
+        musicianInstrument.setMusician(musician);
+        musician.setAlbums(Sets.newHashSet(album));
+        musicianInstrument.setMusicalInstruments(Sets.newHashSet(musicalInstrument));
+        dao.createOrUpdate(album);
+        dao.createOrUpdate(musicalInstrument);
+        dao.createOrUpdate(musician);
+        dao.createOrUpdate(musicianInstrument);
+        Collection<Album> albums = dao.loadAll(Album.class);
+        Collection<MusicianInstrument> musicianIn= dao.loadAll(MusicianInstrument.class);
+        Collection<Musician> musicians = dao.loadAll(Musician.class);
+        assertEquals(1, albums.size());
+        assertEquals(1, musicianIn.size());
+        assertEquals(1, musicians.size());
+        MusicianInstrument loadedMusicanIn = musicianIn.iterator().next();
+        Album loadedAlbum = albums.iterator().next();
+        Musician loadedMusican = musicians.iterator().next();
+        assertEquals(album, loadedAlbum);
+        assertEquals(album.getInstruments(), loadedAlbum.getInstruments());
+        assertEquals(musician,loadedMusican);
+        assertEquals(musician.getAlbums(), loadedMusican.getAlbums());
+        assertEquals(musicianInstrument,loadedMusicanIn);
+        assertEquals(musicianInstrument.getMusician(),loadedMusicanIn.getMusician());
+
+//        dao.delete(album);
+//        assertEquals(0, dao.loadAll(Album.class).size());
+//        dao.delete(musicalInstrument);
+//        assertEquals(0, dao.loadAll(MusicalInstrument.class).size());
+//        dao.delete(musician);
+//        assertEquals(0, dao.loadAll(Musician.class).size());
+//        dao.delete(musicianInstrument);
+//        assertEquals(0, dao.loadAll(MusicianInstrument.class).size());
+
+    }
 }

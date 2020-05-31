@@ -33,6 +33,8 @@ class ECMMinerIntegrationTest {
     private static Session session;
     private static SessionFactory sessionFactory;
     private static ECMMiner ecmMiner;
+
+
     @BeforeAll
     public static void setUp() {
         Configuration configuration = new Configuration.Builder().build();

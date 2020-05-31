@@ -540,4 +540,126 @@ class ECMMinerUnitTest {
         List<MusicalInstrument> mostPopularInstrument = ecmMiner.mostPopularInstrument(k);
         assertEquals(0, mostPopularInstrument.size());
     }
+
+    //other teams' code.
+    @Test
+    public void shouldReturnTheMusicianWhenThereIsOnlyOne() {
+        Album album = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        Musician musician = new Musician("Frank Jarry");
+        musician.setAlbums(Sets.newHashSet(album));
+        when(dao.loadAll(Musician.class)).thenReturn(Sets.newHashSet(musician));
+
+        List<Musician> musicians = ecmMiner.mostProlificMusicians(5, 1901, 2020);
+
+        assertEquals(1, musicians.size());
+        assertTrue(musicians.contains(musician));
+    }
+
+
+    //When only one musician is logged and the number of musicians queried is 5, the expectation value is tested
+    @Test
+    public void shouldReturnTheMostTalentedMusiciansOnlyOne() {
+        MusicalInstrument musicalInstrument1 = new MusicalInstrument("piano");
+        Musician musician1 = new Musician("Frank Jarry");
+
+        MusicianInstrument musicianInstrument1 = new MusicianInstrument();
+        musicianInstrument1.setMusicalInstruments(Sets.newHashSet(musicalInstrument1));
+        musicianInstrument1.setMusician(musician1);
+
+        when(dao.loadAll(MusicianInstrument.class)).thenReturn(Sets.newHashSet(musicianInstrument1));
+        List<Musician> musicians = ecmMiner.mostTalentedMusicians(5);
+
+        assertEquals(1, musicians.size());
+        assertTrue(musicians.contains(musician1));
+
+    }
+
+
+
+
+    //When only one musician is logged and the number of musicians queried is 3. Find the Musicians that collaborate the most widely
+    @Test
+    public void shouldReturnTheMusicianTheMostWidlyOnlyOne() {
+        Musician musician2 = new Musician("Keith Jarrett");
+        Musician musician3 = new Musician("GARY PEACOCK");
+        Musician musician4 = new Musician("JACK DEJOHNETTE");
+        Musician musician5 = new Musician("CHARLIE HADEN");
+
+        Album Koln = new Album(1975, "ECM 1064/65", "The Köln Concert");
+        Album STANDARDS = new Album(2019, "ECM 1255", "STANDARDS, VOL. 1");
+        Album Jasmine = new Album(2019, "ECM 2165", "Jasmine");
+
+        Koln.setFeaturedMusicians(Lists.newArrayList(musician2));
+        STANDARDS.setFeaturedMusicians(Lists.newArrayList(musician2,musician3));
+        Jasmine.setFeaturedMusicians(Lists.newArrayList(musician4));
+        musician2.setAlbums(Sets.newHashSet(Koln,STANDARDS));
+        musician3.setAlbums(Sets.newHashSet(STANDARDS));
+        musician4.setAlbums(Sets.newHashSet(Jasmine));
+
+        when(dao.loadAll(Musician.class)).thenReturn(Sets.newHashSet(musician2, musician3, musician4));
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(Koln,STANDARDS,Jasmine));
+
+        List<Musician> musicians = ecmMiner.mostSocialMusicians(1);
+
+        assertEquals(1, musicians.size());
+    }
+
+
+    //Test expectations of the busiest year when input values is 1 and insert album more than one.
+    @Test
+    public void shouldReturnTheBusiestYearMoreThanOne()
+    {
+        Album album1 = new Album(2019, "ECM 1255", "STANDARDS, VOL. 1");
+        Album album2 = new Album(2019, "ECM 1334", "Jasmine");
+        Album album3 = new Album(2018, "ECM 2333", "Keith Jarrett");
+        Album album4 = new Album(2017, "ECM 2335", "Bob");
+        Album album5 = new Album(2001, "ECM 2336", "Bob");
+        Album album6 = new Album(2002, "ECM 2337", "Bob");
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album1,album2,album3,album4,album5,album6));
+
+        List<Integer> years = ecmMiner.busiestYears(1);
+        assertEquals(1, years.size());
+    }
+
+    //Test expectations of the busiest year when input values is 5 and insert album only one.
+    @Test
+    public void shouldReturnTheBusiestYearOnlyOne()
+    {
+        Album album1 = new Album(2019, "ECM 1255", "STANDARDS, VOL. 1");
+
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album1));
+
+        List<Integer> years = ecmMiner.busiestYears(5);
+        assertEquals(1, years.size());
+    }
+
+    //Test expectations of the most similar albums whe input values is 3 and insert album only one except check value
+    @Test
+    public void shouldReturnTheMostSimilarAlbumsOnlyOne()
+    {
+        Album album1 = new Album(2019, "ECM 1255", "STANDARDS, VOL. 1");
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album1));
+
+        List<Album> album = ecmMiner.mostSimilarAlbums(3, album1);
+
+        assertEquals(1, album.size());
+        assertTrue(album.contains(album1));
+    }
+
+    //Test expectations of the most similar albums whe input values is 2 and insert album more than one except check value
+    @Test
+    public void shouldReturnTheMostSimilarAlbumsMoreThanOne()
+    {
+        Album album1 = new Album(2019, "ECM 1255", "STANDARDS, VOL. 1");
+        Album album2 = new Album(2018, "ECM 1333", "Jasmine");
+        Album album3 = new Album(2019, "ECM 2333", "Keith Jarrett");
+        Album album4 = new Album(2019, "ECM 2334", "Bob");
+        when(dao.loadAll(Album.class)).thenReturn(Sets.newHashSet(album1,album2, album3,album4));
+
+        List<Album> album = ecmMiner.mostSimilarAlbums(2, album1);
+
+        assertEquals(2, album.size());
+        assertTrue(album.contains(album3));
+    }
+
 }

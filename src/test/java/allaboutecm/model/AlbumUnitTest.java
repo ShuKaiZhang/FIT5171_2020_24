@@ -8,8 +8,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class AlbumUnitTest {
        private Album album;
@@ -114,4 +113,63 @@ class AlbumUnitTest {
     public void albumNameAndRecordNumberCannotBeNull() {
         assertThrows(NullPointerException.class, () -> new Album(1975, null,null ));
     }
+
+    //other teams' code.
+
+    @Test
+    @DisplayName("releaseYear can not be negative")
+    public void releaseYearMustBelegal()
+    {
+        assertThrows(IllegalArgumentException.class, () -> album.setReleaseYear(-12));
+    }
+    @Test
+    @DisplayName("releaseYear can not exceed current year ")
+    public void releaseYearMustBelegal2()
+    {
+        assertThrows(IllegalArgumentException.class, () -> album.setReleaseYear(2024));
+    }
+    @Test
+    @DisplayName("release year cannot less than 1900")
+    public void releaseYearCannnotStartAtZero()
+    {
+        assertThrows(IllegalArgumentException.class, () -> album.setReleaseYear(0001));
+    }
+
+    @Test
+    @DisplayName("recordNumber can not be null")
+    public void recordNumberCannotBeNull()
+    {
+        assertThrows(NullPointerException.class, () -> album.setRecordNumber(null));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"", " ", "    \t"})
+    @DisplayName("recordNumber cannot be empty or blank")
+    public void recordNumberCannotBeBlank(String arg)
+    {
+        assertThrows(IllegalArgumentException.class, () -> album.setRecordNumber(arg));
+    }
+
+    @Test
+    @DisplayName("recordNumber must start at ECM")
+    public void recordNumberFirstPartMustBeECM()
+    {
+        assertThrows(IllegalArgumentException.class, () -> album.setRecordNumber("aaa 111111"));
+    }
+
+    @Test
+    @DisplayName("tracks cannot be null")
+    public void tracksCanNotBeNull(){
+        assertThrows(NullPointerException.class, () -> album.setTracks(null));
+    }
+
+    @Test
+    @DisplayName("URL can be null")
+    public void urlCannotBeNull()
+    {
+        assertNull(album.getAlbumURL());
+    }
+
+
+
 }
