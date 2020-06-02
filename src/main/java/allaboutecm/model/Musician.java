@@ -44,8 +44,6 @@ public class Musician extends Entity {
     public Musician(String name) {
         notNull(name);
         notBlank(name);
-
-
         if (!name.trim().contains(" ")){
             throw new IllegalArgumentException("The musician name format is invalid!");
         }else {
