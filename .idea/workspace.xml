@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="317b1523-0306-4da8-a77a-d7e2d982cba9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fit5171-2020-24.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fit5171-2020-24.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/allaboutecm/model/Musician.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/allaboutecm/model/Musician.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2020-05-18T14-00-58_774.dumpstream" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2020-05-18T14-02-24_252.dumpstream" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2020-05-19T00-30-18_436.dumpstream" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2020-05-19T00-30-40_364.dumpstream" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.mining.ECMMinerIntegrationTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.mining.ECMMinerIntegrationTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.mining.ECMMinerUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.mining.ECMMinerUnitTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.AlbumUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.AlbumUnitTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.GroupTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.GroupTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicalInstrumentUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicalInstrumentUnitTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicianInstrumentUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicianInstrumentUnitTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicianUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicianUnitTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.mining.ECMMinerIntegrationTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.mining.ECMMinerIntegrationTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.mining.ECMMinerUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.mining.ECMMinerUnitTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.AlbumUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.AlbumUnitTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.GroupTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.GroupTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicalInstrumentUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicalInstrumentUnitTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicianInstrumentUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicianInstrumentUnitTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicianUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicianUnitTest.txt" afterDir="false" />
-    </list>
+    <list default="true" id="317b1523-0306-4da8-a77a-d7e2d982cba9" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +45,7 @@
   </component>
   <component name="RunManager" selected="JUnit.MusicianUnitTest">
     <configuration name="AlbumUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fit5171-2020-24" />
+      <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="allaboutecm.model.*" />
@@ -88,7 +60,7 @@
       </method>
     </configuration>
     <configuration name="ECMMinerUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fit5171-2020-24" />
+      <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="allaboutecm.mining.*" />
@@ -103,7 +75,7 @@
       </method>
     </configuration>
     <configuration name="ECMMinerUnitTest.shouldReturnTheMostSimilarAlbumsZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fit5171-2020-24" />
+      <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="allaboutecm.mining.*" />
@@ -119,7 +91,7 @@
       </method>
     </configuration>
     <configuration name="ECMMinerUnitTest.shouldReturnTheMusicianTheMostWidlyOnlyOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fit5171-2020-24" />
+      <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="allaboutecm.mining.*" />
@@ -135,7 +107,7 @@
       </method>
     </configuration>
     <configuration name="MusicianUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fit5171-2020-24" />
+      <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="allaboutecm.model.*" />
@@ -145,53 +117,6 @@
       <option name="PACKAGE_NAME" value="allaboutecm.model" />
       <option name="MAIN_CLASS_NAME" value="allaboutecm.model.MusicianUnitTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="fit5171-2020-24" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="fit5171-2020-24" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
