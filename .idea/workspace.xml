@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="317b1523-0306-4da8-a77a-d7e2d982cba9" name="Default Changelist" comment="" />
+    <list default="true" id="317b1523-0306-4da8-a77a-d7e2d982cba9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fit5171-2020-24.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fit5171-2020-24.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/allaboutecm/model/Musician.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/allaboutecm/model/Musician.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2020-05-18T14-00-58_774.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2020-05-18T14-02-24_252.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2020-05-19T00-30-18_436.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2020-05-19T00-30-40_364.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.mining.ECMMinerIntegrationTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.mining.ECMMinerIntegrationTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.mining.ECMMinerUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.mining.ECMMinerUnitTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.AlbumUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.AlbumUnitTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.GroupTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.GroupTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicalInstrumentUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicalInstrumentUnitTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicianInstrumentUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicianInstrumentUnitTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicianUnitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-allaboutecm.model.MusicianUnitTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.mining.ECMMinerIntegrationTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.mining.ECMMinerIntegrationTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.mining.ECMMinerUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.mining.ECMMinerUnitTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.AlbumUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.AlbumUnitTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.GroupTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.GroupTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicalInstrumentUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicalInstrumentUnitTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicianInstrumentUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicianInstrumentUnitTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicianUnitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/allaboutecm.model.MusicianUnitTest.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +58,18 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="JUnit.MusicianUnitTest">
     <configuration name="AlbumUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
