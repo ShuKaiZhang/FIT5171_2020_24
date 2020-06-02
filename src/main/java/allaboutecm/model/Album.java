@@ -212,4 +212,5 @@ public class Album extends Entity {
     public void setReleaseFormat(String releaseFormat) {
         this.releaseFormat = releaseFormat;
     }
+    
 }
