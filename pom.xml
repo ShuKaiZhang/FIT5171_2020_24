@@ -48,9 +48,9 @@
                         <param>allaboutecm.mining.*</param>
                     </targetClasses>
                     <excludedMethods>
-                        <excludedMethods>hashCode</excludedMethods>
-                        <excludedMethods>equals</excludedMethods>
-                        <excludedMethods>allaboutecm.model.*.get*</excludedMethods>
+                        <excludedMethod>hashCode</excludedMethod>
+                        <excludedMethod>equals</excludedMethod>
+                        <excludedMethod>allaboutecm.model.*.get*</excludedMethod>
                     </excludedMethods>
                     <outputFormats>
                         <outputFormat>XML</outputFormat>

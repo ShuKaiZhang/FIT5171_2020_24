@@ -164,6 +164,12 @@ class AlbumUnitTest {
     }
 
     @Test
+    @DisplayName("tracks cannot be blank")
+    public void tracksCanNotBeBlank(){
+        assertThrows(IllegalArgumentException.class, () -> album.setTracks(new ArrayList<>()));
+    }
+
+    @Test
     @DisplayName("URL can be null")
     public void urlCannotBeNull()
     {

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Entity.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package allaboutecm.model;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.neo4j.ogm.annotation.GeneratedValue;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.neo4j.ogm.annotation.Id;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>public abstract class Entity {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Id</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @GeneratedValue</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    protected Long id;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public Long getId() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_12'/>
+12
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_12'>1</a>
+<span>
+1. getId : replaced Long return value with 0L for allaboutecm/model/Entity::getId &rarr; TIMED_OUT<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>        return id;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void setId(Long id) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.id = id;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6dd1f239_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6dd1f239_12'>12</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6dd1f239_12'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getId<br/><b>Killed by : </b>none</span></span> replaced Long return value with 0L for allaboutecm/model/Entity::getId &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>BOOLEAN_FALSE_RETURN</li>
+<li class='mutator'>BOOLEAN_TRUE_RETURN</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+<li class='mutator'>EMPTY_RETURN_VALUES</li>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>NULL_RETURN_VALUES</li>
+<li class='mutator'>PRIMITIVE_RETURN_VALS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.cannotSaveSameMusicianTwice() (12309 ms)</li><li>allaboutecm.mining.ECMMinerIntegrationTest.mostPopularInstrumentLargeK() (423 ms)</li><li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulDeleteAlbum() (531 ms)</li><li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationOfAll() (1519 ms)</li><li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfuldeleteMusician() (381 ms)</li><li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationAndLoadingOfMusicianInstrument() (392 ms)</li><li>allaboutecm.mining.ECMMinerIntegrationTest.mostPopularInstrumentInvalidK() (586 ms)</li><li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationAndLoadingOfAlbum() (530 ms)</li><li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.musicianInfoCanBeUpdated() (438 ms)</li><li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationOfMusicianInstrumentAndMuscialInstrument() (623 ms)</li><li>allaboutecm.mining.ECMMinerIntegrationTest.mostTalentedMusiciansNormalTest() (290 ms)</li><li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationOfMusicianInstrumentAndMusician() (759 ms)</li><li>allaboutecm.mining.ECMMinerIntegrationTest.mostTalentedMusiciansInvalidK() (295 ms)</li><li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationAndLoadingOfMusician() (413 ms)</li><li>allaboutecm.mining.ECMMinerIntegrationTest.mostPopularInstrumentNormalTest() (433 ms)</li><li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulUpdateOfAlbum() (358 ms)</li><li>allaboutecm.mining.ECMMinerIntegrationTest.mostTalentedMusiciansLargeK() (368 ms)</li><li>allaboutecm.dataaccess.neo4j.Neo4jDAOUnitTest.successfulCreationAndLoadingOfMusicalInstrument() (538 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.5.2
+
+</body>
+</html>
