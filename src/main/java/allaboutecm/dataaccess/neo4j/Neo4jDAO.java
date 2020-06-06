@@ -28,7 +28,11 @@ public class Neo4jDAO implements DAO {
     public <T extends Entity> T load(Class<T> clazz, Long id) {
         return session.load(clazz, id, DEPTH_ENTITY);
     }
-
+    /**
+     * Create or update an entity.
+     *
+     * @Param entity the entity that you want to create or update.
+     */
     @Override
     public <T extends Entity> T createOrUpdate(T entity) {
         Class clazz = entity.getClass();
@@ -44,13 +48,22 @@ public class Neo4jDAO implements DAO {
 
     }
 
+    /**
+     * Load all the entity of a class.
+     *
+     * @Param clazz the class of the entity you want to load.
+     */
     @Override
     public <T extends Entity> Collection<T> loadAll(Class<T> clazz) {
         return session.loadAll(clazz, DEPTH_LIST);
 
 
     }
-
+    /**
+     * Delete the entity.
+     *
+     * @Param entity the entity you want to delete.
+     */
     @Override
     public <T extends Entity> void delete(T entity) {
         Class clazz = entity.getClass();
@@ -61,7 +74,11 @@ public class Neo4jDAO implements DAO {
             session.delete(entity);
         }
     }
-
+    /**
+     * Returns the musician by name.
+     *
+     * @Param name the name of the musicians.
+     */
     @Override
     public Musician findMusicianByName(String name) {
         Filters filters = new Filters();
@@ -73,6 +90,11 @@ public class Neo4jDAO implements DAO {
             return musicians.iterator().next();
         }
     }
+    /**
+     * Returns the Album by name.
+     *
+     * @Param name the name of the Album.
+     */
     @Override
     public Album findAlbumByName(String name) {
         Filters filters = new Filters();
@@ -85,7 +107,12 @@ public class Neo4jDAO implements DAO {
         }
     }
 
-
+    /**
+     * Returns the Entity by Entity and class.
+     *
+     * @Param entity the entity you want to find.
+     * @Param clazz the class of the entity.
+     */
     private <T extends Entity> T findExistingEntity(Entity entity, Class clazz) {
         Filters filters = new Filters();
         Collection<? extends Entity> collection = Sets.newLinkedHashSet();
