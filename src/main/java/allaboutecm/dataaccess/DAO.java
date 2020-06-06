@@ -3,8 +3,6 @@ package allaboutecm.dataaccess;
 import allaboutecm.model.Album;
 import allaboutecm.model.Entity;
 import allaboutecm.model.Musician;
-
-import java.net.URL;
 import java.util.Collection;
 
 public interface DAO {

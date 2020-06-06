@@ -65,7 +65,6 @@ public class Album extends Entity {
             this.recordNumber = recordNumber;
 
         }else {
-            //System.out.println(recordNumber.substring(0,3));
             throw new IllegalArgumentException("The record number must start with 'ECM '!");
         }
 
@@ -145,7 +144,7 @@ public class Album extends Entity {
         return tracks;
     }
 
-    public void setTracks(ArrayList<String> tracks) {
+    public void setTracks(List<String> tracks) {
         notNull(tracks);
         if (tracks.isEmpty()||tracks.contains("")){
             throw new IllegalArgumentException("The tracks cannot be blank!");

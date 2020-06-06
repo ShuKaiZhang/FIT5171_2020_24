@@ -6,21 +6,12 @@ import allaboutecm.model.MusicalInstrument;
 import allaboutecm.model.Musician;
 import allaboutecm.model.MusicianInstrument;
 import com.google.common.collect.*;
-import org.neo4j.cypher.internal.frontend.v3_4.phases.Do;
-import org.neo4j.values.storable.ValueComparator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
- * TODO: implement and test the methods in this class.
  * Note that you can extend the Neo4jDAO class to make implementing this class easier.
  */
 public class ECMMiner {
-    private static Logger logger = LoggerFactory.getLogger(ECMMiner.class);
-
     private final DAO dao;
 
     public ECMMiner(DAO dao) {
@@ -128,14 +119,13 @@ public class ECMMiner {
         }
         Collection<Musician> musicians = dao.loadAll(Musician.class);
         ListMultimap<Integer, Musician> musicianList = MultimapBuilder.treeKeys().arrayListValues().build();
-        //Collections.sort(list, (o1, o2) -> o2.getFeaturedMusicians().size() - o1.getFeaturedMusicians().size());
 
         for (Musician m : musicians) {
             Set<Album> albums = m.getAlbums();
             HashSet<Musician> musicianHashSet = new HashSet<>();
             for (Album a : albums) {
-                List<Musician> AlbumOfMusician = a.getFeaturedMusicians();
-                musicianHashSet.addAll(Sets.newHashSet(AlbumOfMusician));
+                List<Musician> albumOfMusician = a.getFeaturedMusicians();
+                musicianHashSet.addAll(Sets.newHashSet(albumOfMusician));
             }
             musicianList.put(musicianHashSet.size() - 1, m);
         }
@@ -198,8 +188,7 @@ public class ECMMiner {
             return result;
 
         } else {
-            List<Integer> result = new ArrayList<>();
-            return result;
+            return new ArrayList<>();
         }
     }
 
@@ -258,12 +247,11 @@ public class ECMMiner {
             return Lists.newArrayList();
         }
         Collection<MusicianInstrument> musicianInstruments = dao.loadAll(MusicianInstrument.class);
-//        ListMultimap<Integer, MusicalInstrument> instrumentMap = MultimapBuilder.treeKeys().arrayListValues().build();
         List<MusicalInstrument> list = new ArrayList<>();
         for (MusicianInstrument musicianInstrument : musicianInstruments) {
             list.addAll(musicianInstrument.getMusicalInstruments());
         }
-        Map<MusicalInstrument, Integer> results = new LinkedHashMap<MusicalInstrument, Integer>();
+        Map<MusicalInstrument, Integer> results = new LinkedHashMap<>();
         for (MusicalInstrument s : list) {
             if (results.get(s) != null) {
                 results.put(s, results.get(s) + 1);

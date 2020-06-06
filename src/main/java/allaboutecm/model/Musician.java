@@ -50,7 +50,6 @@ public class Musician extends Entity {
         }else {
             this.name = name;
             this.musicianUrl = null;
-            //albums = Sets.newLinkedHashSet();
             this.musicianWiki = null;
             this.biography = null;
             albums = Sets.newHashSet();

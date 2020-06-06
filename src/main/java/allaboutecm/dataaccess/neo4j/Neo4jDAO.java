@@ -11,13 +11,7 @@ import org.neo4j.ogm.cypher.Filter;
 import org.neo4j.ogm.cypher.Filters;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.transaction.Transaction;
-
-import java.net.URL;
 import java.util.Collection;
-import java.util.List;
-
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
-import static org.neo4j.ogm.cypher.ComparisonOperator.CONTAINING;
 import static org.neo4j.ogm.cypher.ComparisonOperator.EQUALS;
 
 public class Neo4jDAO implements DAO {
