@@ -3,6 +3,8 @@ package allaboutecm.model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.ArrayList;
 
@@ -43,6 +45,13 @@ class GroupUnitTest {
     @DisplayName("Group musician cannot be null")
     public void groupMusicianCannotBeNull() {
         assertThrows(NullPointerException.class, () -> group.setMusicians(null));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"", " ", "    \t"})
+    @DisplayName("Group name cannot be blank")
+    public void musicianNameMustBeAName(String arg) {
+        assertThrows(IllegalArgumentException.class, () -> group.setName(arg));
     }
 
 }

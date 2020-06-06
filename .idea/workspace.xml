@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="317b1523-0306-4da8-a77a-d7e2d982cba9" name="Default Changelist" comment="" />
+    <list default="true" id="317b1523-0306-4da8-a77a-d7e2d982cba9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fit5171-2020-XX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fit5171-2020-XX.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/allaboutecm/model/GroupUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/allaboutecm/model/GroupUnitTest.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +37,19 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.MusicianUnitTest">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.GroupUnitTest.musicianNameMustBeAName">
     <configuration name="AlbumUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
@@ -78,17 +96,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ECMMinerUnitTest.shouldReturnTheMusicianTheMostWidlyOnlyOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GroupUnitTest.musicianNameMustBeAName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171-2020-XX" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="allaboutecm.mining.*" />
+          <option name="PATTERN" value="allaboutecm.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="allaboutecm.mining" />
-      <option name="MAIN_CLASS_NAME" value="allaboutecm.mining.ECMMinerUnitTest" />
-      <option name="METHOD_NAME" value="shouldReturnTheMusicianTheMostWidlyOnlyOne" />
+      <option name="PACKAGE_NAME" value="allaboutecm.model" />
+      <option name="MAIN_CLASS_NAME" value="allaboutecm.model.GroupUnitTest" />
+      <option name="METHOD_NAME" value="musicianNameMustBeAName(java.lang.String)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GroupUnitTest.musicianNameMustBeAName" />
         <item itemvalue="JUnit.MusicianUnitTest" />
         <item itemvalue="JUnit.AlbumUnitTest" />
         <item itemvalue="JUnit.ECMMinerUnitTest" />
         <item itemvalue="JUnit.ECMMinerUnitTest.shouldReturnTheMostSimilarAlbumsZero" />
-        <item itemvalue="JUnit.ECMMinerUnitTest.shouldReturnTheMusicianTheMostWidlyOnlyOne" />
       </list>
     </recent_temporary>
   </component>
