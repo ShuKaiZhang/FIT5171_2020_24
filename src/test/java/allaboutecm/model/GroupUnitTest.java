@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class GroupTest {
+class GroupUnitTest {
     private Group group;
     private ArrayList<Musician> jan;
 
@@ -44,4 +44,5 @@ class GroupTest {
     public void groupMusicianCannotBeNull() {
         assertThrows(NullPointerException.class, () -> group.setMusicians(null));
     }
+
 }
