@@ -143,9 +143,6 @@ public class ECMMiner {
                 result.addAll(list);
             }
         }
-        if (k > result.size()) {
-            k = result.size();
-        }
         return result;
     }
 
